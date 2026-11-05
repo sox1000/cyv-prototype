@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- T4 ROOM DETAIL v0.2 — adds: layout-tagged gallery, pricing options,
+     suitable-events chips, auto-generated data-driven FAQs.
+     ALL new sections are conditional: they render only when the room record
+     has the data (a room with no pricing rows shows no pricing table, etc.) -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<title>Phoxtrott Ballroom Hire, Hilton Bournemouth | Event Space for 360 Guests</title>
+<meta name="description" content="Hire the Phoxtrott Ballroom at Hilton Bournemouth from £600 half day — 360 guests theatre-style, 270 banquet, private bar and drinks reception area. Prices, photos, free enquiry.">
+<link rel="canonical" href="https://www.chooseyourvenue.com/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/27076">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MeetingRoom","name":"Phoxtrott Ballroom",
+ "url":"https://www.chooseyourvenue.com/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/27076",
+ "image":"https://images.cye-group.com/Assets/247323/big.webp",
+ "containedInPlace":{"@type":"Hotel","@id":"https://www.chooseyourvenue.com/venues/hilton-bournemouth#venue","name":"Hilton Bournemouth"},
+ "maximumAttendeeCapacity":360,
+ "floorSize":{"@type":"QuantitativeValue","value":341.25,"unitCode":"MTK"},
+ "additionalProperty":[
+  {"@type":"PropertyValue","name":"Theatre capacity","value":360},
+  {"@type":"PropertyValue","name":"Banquet capacity","value":270},
+  {"@type":"PropertyValue","name":"Dinner capacity","value":240},
+  {"@type":"PropertyValue","name":"Cabaret capacity","value":208},
+  {"@type":"PropertyValue","name":"Reception capacity","value":204},
+  {"@type":"PropertyValue","name":"Classroom capacity","value":146}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Phoxtrott Ballroom Hire",
+ "description":"Private ballroom hire at Hilton Bournemouth with private bar and drinks reception area.",
+ "offers":[
+  {"@type":"Offer","name":"Half day hire","price":"600.00","priceCurrency":"GBP","availability":"https://schema.org/InStock"},
+  {"@type":"Offer","name":"Full day hire","price":"950.00","priceCurrency":"GBP","availability":"https://schema.org/InStock"},
+  {"@type":"Offer","name":"Evening hire","price":"750.00","priceCurrency":"GBP","availability":"https://schema.org/InStock"},
+  {"@type":"Offer","name":"Day delegate rate","price":"40.00","priceCurrency":"GBP","availability":"https://schema.org/InStock"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"How many guests does the Phoxtrott Ballroom hold?","acceptedAnswer":{"@type":"Answer","text":"Up to 360 guests theatre-style, 270 for a banquet, 240 for dinner, 208 cabaret, 204 for a standing reception and 146 classroom-style."}},
+ {"@type":"Question","name":"How much does it cost to hire the Phoxtrott Ballroom?","acceptedAnswer":{"@type":"Answer","text":"Room hire starts from £600 for a half day, £950 for a full day and £750 for evening hire, with day delegate packages from £40 per person. Rates vary by date and season — enquire for a quote."}},
+ {"@type":"Question","name":"Can the Phoxtrott Ballroom be set up for a sit-down dinner?","acceptedAnswer":{"@type":"Answer","text":"Yes — the ballroom seats up to 270 guests banquet-style or 240 for a formal dinner, with space remaining for a dance floor and stage."}},
+ {"@type":"Question","name":"Does the Phoxtrott Ballroom have its own bar?","acceptedAnswer":{"@type":"Answer","text":"Yes, the ballroom has a private bar and its own drinks reception area, so your event is fully self-contained."}},
+ {"@type":"Question","name":"What events is the Phoxtrott Ballroom suitable for?","acceptedAnswer":{"@type":"Answer","text":"Its 360-guest capacity, private bar and stage suit gala dinners, award ceremonies, wedding receptions, large birthday parties, Christmas parties, conferences and charity balls."}},
+ {"@type":"Question","name":"How big is the Phoxtrott Ballroom?","acceptedAnswer":{"@type":"Answer","text":"The room measures 19.5m by 17.5m (341 square metres) with a 4.9m ceiling height."}}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens-cyv.css"><link rel="stylesheet" href="/assets/base.css">
+<style>
+/* T4 v0.2 additions — will migrate to base.css once approved */
+.layout-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.layout-gallery figure{border-radius:10px;overflow:hidden;background:linear-gradient(135deg,var(--accent-soft),var(--paper));position:relative;margin:0}
+.layout-gallery img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.layout-gallery figcaption{position:absolute;left:0;bottom:0;background:rgba(30,35,24,.75);color:#fff;font-size:.75rem;font-weight:600;padding:4px 10px;border-top-right-radius:8px}
+@media(max-width:640px){.layout-gallery{grid-template-columns:repeat(2,1fr)}}
+.price-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:14px}
+.price-table th,.price-table td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--line);font-size:.95rem}
+.price-table th{background:var(--accent-soft);font-family:var(--font-display);font-size:.9rem}
+.price-table tr:last-child td{border-bottom:0}
+.price-table td:last-child{font-weight:700;text-align:right}
+.price-note{font-size:.8rem;color:var(--ink-soft);margin-top:8px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">choose<span>your</span>venue</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/hire/uk/hampshire/southampton/christening-party/">Venue Search</a>
+      <a href="/event-types/">Event Types</a><a href="#">Venue Styles</a><a href="#">Offers</a><a href="#">News</a>
+    </nav>
+    <a class="header-cta" href="#">+ List your venue</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li><li><a href="#">Venues</a></li>
+      <li><a href="#">Dorset</a></li><li><a href="#">Bournemouth</a></li>
+      <li><a href="/venues/hilton-bournemouth/">Hilton Bournemouth</a></li>
+      <li aria-current="page">Phoxtrott Ballroom</li>
+    </ol>
+  </nav>
+
+  <section class="hero" style="padding-bottom:0">
+    <p class="eyebrow">Ballroom · Hilton Bournemouth</p>
+    <h1>Phoxtrott <em>Ballroom</em></h1>
+    <p class="updated">Terrace Road, Bournemouth BH2 5EL · Up to 360 guests · From £600 half-day</p>
+  </section>
+
+  <div class="layout-detail" style="margin-top:8px">
+    <div>
+      <div class="gallery-hero">
+        <img src="https://images.cye-group.com/Assets/247323/big.webp" alt="Phoxtrott Ballroom at Hilton Bournemouth" fetchpriority="high">
+      </div>
+
+      <!-- NEW: layout-tagged gallery. Each image carries a layout tag in the
+           data; alt text is generated: "{Room} in {layout} layout at {Venue}".
+           Renders only for images that exist. -->
+      <div class="layout-gallery">
+        <figure>
+          <img src="https://images.cye-group.com/Assets/247594/thumb.webp" alt="Phoxtrott Ballroom in theatre layout at Hilton Bournemouth" loading="lazy">
+          <figcaption>Theatre · 360</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.cye-group.com/Assets/247599/thumb.webp" alt="Phoxtrott Ballroom in banquet layout at Hilton Bournemouth" loading="lazy">
+          <figcaption>Banquet · 270</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.cye-group.com/Assets/247324/thumb.webp" alt="Phoxtrott Ballroom in cabaret layout at Hilton Bournemouth" loading="lazy">
+          <figcaption>Cabaret · 208</figcaption>
+        </figure>
+      </div>
+
+      <section class="section" style="padding-top:36px">
+        <h2>Room <span>description</span></h2>
+        <div class="intro" style="margin-top:10px">
+          <p>One of the most stunning and opulent spaces for a large social or corporate event, with its own private bar and drinks reception area. Seating up to 360 theatre-style, it makes for truly unforgettable parties and celebrations.</p>
+        </div>
+      </section>
+
+      <!-- NEW: pricing options from RoomPricing rows. Table renders only
+           when rows exist; every price also appears as an Offer in schema. -->
+      <section class="section">
+        <h2>Room hire <span>prices</span></h2>
+        <table class="price-table">
+          <thead><tr><th>Hire option</th><th></th><th>From</th></tr></thead>
+          <tbody>
+            <tr><td>Half day</td><td>8am–1pm or 1pm–6pm</td><td>£600</td></tr>
+            <tr><td>Full day</td><td>8am–6pm</td><td>£950</td></tr>
+            <tr><td>Evening</td><td>6pm–midnight</td><td>£750</td></tr>
+            <tr><td>Day delegate rate</td><td>per person, min. 30</td><td>£40pp</td></tr>
+          </tbody>
+        </table>
+        <p class="price-note">Guide prices — rates vary by date and season. Enquire for an exact quote; no booking fees.</p>
+      </section>
+
+      <!-- NEW: suitable events — DERIVED from the venue's occasion list
+           filtered by capacity/facility fit rules, linking to T3 pages. -->
+      <section class="section">
+        <h2>Events this room <span>suits</span></h2>
+        <p>Based on its 360-guest capacity, private bar, stage and drinks reception area:</p>
+        <div class="chip-row">
+          <a class="chip" href="/venue/hilton-bournemouth/birthday-party/">Birthday Party</a>
+          <a class="chip" href="#">Gala Dinner</a>
+          <a class="chip" href="#">Wedding Reception</a>
+          <a class="chip" href="#">Christmas Party</a>
+          <a class="chip" href="#">Awards Ceremony</a>
+          <a class="chip" href="#">Conference</a>
+          <a class="chip" href="#">Charity Ball</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Room <span>capacities</span></h2>
+        <div class="card-grid-3" style="margin-top:14px">
+          <div class="aside-card"><ul class="glance">
+            <li><span>Theatre</span><span>360</span></li>
+            <li><span>Banquet</span><span>270</span></li>
+            <li><span>Dinner</span><span>240</span></li>
+          </ul></div>
+          <div class="aside-card"><ul class="glance">
+            <li><span>Cabaret</span><span>208</span></li>
+            <li><span>Reception</span><span>204</span></li>
+            <li><span>Classroom</span><span>146</span></li>
+          </ul></div>
+          <div class="aside-card"><ul class="glance">
+            <li><span>Length</span><span>19.5 m</span></li>
+            <li><span>Width</span><span>17.5 m</span></li>
+            <li><span>Height</span><span>4.9 m</span></li>
+          </ul></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>More rooms at <span>Hilton Bournemouth</span></h2>
+        <div class="card-grid-3" style="margin-top:14px">
+          <a class="tile-card" href="/venues/hilton-bournemouth/">
+            <div class="tile-media"><img src="https://images.cye-group.com/Assets/247594/thumb.webp" alt="Rule, Centrefold, Balance &amp; Blot" loading="lazy"></div>
+            <div class="tile-body"><div class="t">Rule, Centrefold, Balance &amp; Blot</div><div class="c">Up to 112</div></div>
+          </a>
+          <a class="tile-card" href="/venues/hilton-bournemouth/">
+            <div class="tile-media"><img src="https://images.cye-group.com/Assets/247599/thumb.webp" alt="Centrefold, Balance &amp; Blot" loading="lazy"></div>
+            <div class="tile-body"><div class="t">Centrefold, Balance &amp; Blot</div><div class="c">Up to 84</div></div>
+          </a>
+          <a class="tile-card" href="/venues/hilton-bournemouth/">
+            <div class="tile-media"><img src="https://images.cye-group.com/Assets/247324/thumb.webp" alt="Balance &amp; Blot" loading="lazy"></div>
+            <div class="tile-body"><div class="t">Balance &amp; Blot</div><div class="c">Up to 56</div></div>
+          </a>
+        </div>
+        <p style="margin-top:14px"><a href="/venues/hilton-bournemouth/"><strong>View the full venue profile →</strong></a></p>
+      </section>
+    </div>
+
+    <aside>
+      <div class="aside-card">
+        <h2>Room hire at a glance</h2>
+        <ul class="glance">
+          <li><span>Max capacity</span><span>360</span></li>
+          <li><span>Floor area</span><span>341 m²</span></li>
+          <li><span>From</span><span>£600 / half day</span></li>
+          <li><span>Private bar</span><span>Yes</span></li>
+          <li><span>Drinks reception area</span><span>Yes</span></li>
+        </ul>
+        <div class="venue-actions" style="margin-top:16px">
+          <a class="btn btn-solid btn-xl" href="#" style="width:100%;text-align:center">Send enquiry</a>
+          <a class="btn btn-ghost" href="#" style="width:100%;text-align:center">♡ Add to shortlist</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- NEW: auto-generated FAQs. Each Q&A is a template keyed to a data field,
+     rendered only when the room has that data — so every room's FAQ set is
+     unique, accurate, and matches the FAQPage schema word-for-word. -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Phoxtrott Ballroom FAQs</h2>
+    <details><summary>How many guests does the Phoxtrott Ballroom hold?</summary><p class="answer">Up to 360 guests theatre-style, 270 for a banquet, 240 for dinner, 208 cabaret, 204 for a standing reception and 146 classroom-style.</p></details>
+    <details><summary>How much does it cost to hire the Phoxtrott Ballroom?</summary><p class="answer">Room hire starts from £600 for a half day, £950 for a full day and £750 for evening hire, with day delegate packages from £40 per person. Rates vary by date and season — enquire for a quote.</p></details>
+    <details><summary>Can the Phoxtrott Ballroom be set up for a sit-down dinner?</summary><p class="answer">Yes — the ballroom seats up to 270 guests banquet-style or 240 for a formal dinner, with space remaining for a dance floor and stage.</p></details>
+    <details><summary>Does the Phoxtrott Ballroom have its own bar?</summary><p class="answer">Yes, the ballroom has a private bar and its own drinks reception area, so your event is fully self-contained.</p></details>
+    <details><summary>What events is the Phoxtrott Ballroom suitable for?</summary><p class="answer">Its 360-guest capacity, private bar and stage suit gala dinners, award ceremonies, wedding receptions, large birthday parties, Christmas parties, conferences and charity balls.</p></details>
+    <details><summary>How big is the Phoxtrott Ballroom?</summary><p class="answer">The room measures 19.5m by 17.5m (341 square metres) with a 4.9m ceiling height.</p></details>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div><div class="logo" style="color:#fff">choose<span>your</span>venue</div><p style="margin-top:10px">Chooseyourevent.com Ltd, Taunton TA1 2UH</p></div>
+    <nav aria-label="Footer menu"><h2>Menu</h2><a href="/">Home</a><a href="/event-types/">Event Types</a></nav>
+    <nav aria-label="Useful links"><h2>Useful links</h2><a href="#">About us</a><a href="#">Contact us</a></nav>
+  </div>
+  <div class="legal wrap">© 2004–2026 Chooseyourevent.com Ltd</div>
+</footer>
+</body>
+</html>

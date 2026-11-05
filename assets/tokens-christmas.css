@@ -1,0 +1,30 @@
+/* ============================================================
+   BRAND TOKENS — christmasvenues.com (DEMO SKIN)
+   Same variables, different values: this file is the entire
+   "multi-brand" mechanism. Placeholder palette — refine against
+   the live christmasvenues brand before any real use.
+   ============================================================ */
+:root{
+  --brand-name:"christmasvenues";
+  --accent:#D4A843;          /* gold — interactive */
+  --accent-strong:#E2BA57;
+  --accent-soft:#F6ECD3;
+  --accent-line:#E5D3A0;
+  --ink-accent:#9E2B25;      /* deep festive red — typographic accents */
+  --ink-accent-deep:#7C1F1A;
+
+  --ink:#221A18;
+  --ink-soft:#4E423F;
+  --paper:#FBF8F4;
+  --card:#FFFFFF;
+  --line:#EAE2D8;
+  --footer-bg:#1A100E;
+  --footer-ink:#C9B8AE;
+
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Source Sans 3","Source Sans Pro",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+  --radius:14px;
+  --radius-pill:999px;
+  --shadow:0 1px 2px rgba(34,26,24,.05),0 8px 24px rgba(34,26,24,.06);
+}

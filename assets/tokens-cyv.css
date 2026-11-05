@@ -1,0 +1,33 @@
+/* ============================================================
+   BRAND TOKENS — chooseyourvenue.com
+   The only file that changes per brand. Swap the stylesheet link
+   to tokens-christmas.css to preview the christmasvenues skin.
+   ============================================================ */
+:root{
+  /* Brand */
+  --brand-name:"chooseyourvenue";
+  --accent:#C4D82E;          /* lime — interactive: buttons, hovers, tags */
+  --accent-strong:#d3e63f;   /* lime hover */
+  --accent-soft:#EEF3C8;     /* lime tint — tags, hover fills */
+  --accent-line:#DCE59A;     /* tag borders */
+  --ink-accent:#99A800;      /* olive — typographic accents, links */
+  --ink-accent-deep:#6E7A00; /* olive link/text on light */
+
+  /* Neutrals */
+  --ink:#1E2318;
+  --ink-soft:#4A5140;
+  --paper:#FAFAF7;
+  --card:#FFFFFF;
+  --line:#E4E6DC;
+  --footer-bg:#14170F;
+  --footer-ink:#B9BFAC;
+
+  /* Type */
+  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+  --font-body:"Source Sans 3","Source Sans Pro",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+  /* Shape */
+  --radius:14px;
+  --radius-pill:999px;
+  --shadow:0 1px 2px rgba(30,35,24,.05),0 8px 24px rgba(30,35,24,.06);
+}
