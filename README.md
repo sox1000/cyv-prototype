@@ -37,8 +37,8 @@ cd cyv-prototype
 python3 -m http.server 8080     # then open http://localhost:8080
 ```
 
-## Preview site (Cloudflare Pages, auto-deploy)
-The repo is connected to Cloudflare Pages: every push to `main` updates the preview link, and every other branch gets its own preview URL. `_headers` and `robots.txt` keep the preview out of search engines; the pages themselves still carry their production robots and canonical tags for the developer.
+## Preview site (Cloudflare, auto-deploy)
+The repo is connected to Cloudflare (Workers static assets, configured in `wrangler.jsonc`; files in `.assetsignore` are not served): every push to `main` updates the preview link, and every other branch gets its own preview URL. `_headers` and `robots.txt` keep the preview out of search engines; the pages themselves still carry their production robots and canonical tags for the developer.
 
 ## Deploy to Cloudflare Pages (manual alternative)
 Dashboard → Workers & Pages → Create → Pages → Upload assets → drag this folder in. You get a live `*.pages.dev` URL to review on your phone, run Lighthouse against, and share. (Or connect a Git repo for auto-deploys once this lives in one.)

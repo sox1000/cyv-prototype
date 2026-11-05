@@ -1,0 +1,12 @@
+// Cloudflare Workers static-assets config for the prototype preview.
+// No build step: the repo root is the site. Files listed in .assetsignore
+// (docs, notes, this file) are not served.
+{
+  "name": "cyv-prototype",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
