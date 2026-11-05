@@ -14,14 +14,16 @@ integration by external developers — every page converts to a Razor view.
 - Every new page must be linked from the click journey the same session it's created
 - Performance: no JS, one font pair, eager+fetchpriority only on LCP images, lazy+dimensions everywhere else
 - Yellow .proto-note boxes explain prototype-only behaviour
+- Blog URLs: /blog/, /blog/page/{n}/, /blog/category/{slug}/, /blog/{post-slug}/ (confirm against the live blog before handover; 301 any legacy paths)
 
 ## Build status
 DONE: home / event-types index / christening hub / venue listing (banded results,
 glance card, ECOsmart) / room listing (conference) / wake listing (crematoriums,
 sombre register) / venue detail (12 rooms, ECOsmart, sticky aside) / venue×occasion
-×2 (indexed + noindex policy states) / room detail (layout gallery, pricing, auto-FAQs)
+×2 (indexed + noindex policy states) / room detail (layout gallery, pricing, auto-FAQs) /
+blog index T8 (/blog/) + article T9 (/blog/how-to-plan-a-christening-party/) — v0.7
 
-TODO (in order): blog index + article (T8/T9) · offers index + detail (T10) ·
+TODO (in order): offers index + detail (T10) ·
 destinations hub (T6b — pending canonical decision) · static set (about, contact,
 advertising) · enquiry flow + thank-you (noindex) · per-template integration specs
 into docs/specs/ (fields consumed, conditionals, ES queries per docs/occasion-config

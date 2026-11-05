@@ -14,12 +14,13 @@ A static, clickable prototype of the redesigned site. Folder paths mirror **prod
 | T3 Venue×occasion (indexed) | ✅ | `/venue/hilton-bournemouth/birthday-party/` | HasContent=1: real £44pp package → self-canonical |
 | T3 Venue×occasion (consolidated) | ✅ | `/venue/hilton-bournemouth/christening-party/` | HasContent=0: noindex,follow + canonical→venue — **both policy states demonstrated live** |
 | T4 Room detail | ✅ | `/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/` | Real capacities/dimensions; MeetingRoom JSON-LD |
-| T8/T9 Blog | ⬜ TODO | — | |
+| T8 Blog index | ✅ | `/blog/` | Categories (chip row), featured post, card grid, crawlable pagination; `Blog` + BreadcrumbList schema |
+| T9 Blog article | ✅ | `/blog/how-to-plan-a-christening-party/` | `BlogPosting` + BreadcrumbList + FAQPage schema; author/dates, contents, inline related venues, related posts |
 | T10 Offers | ⬜ TODO | — | |
 | T6b Destinations | ⬜ TODO | — | Pending destinations-vs-hire canonical decision |
 | T11–T13 Static/utility | ⬜ TODO | — | |
 
-The exemplar journey: **Home → Event Types → Christening hub → Southampton listing → venue → occasion page → room** — every link a user or crawler follows exists once.
+The exemplar journey: **Home → Event Types → Christening hub → Southampton listing → venue → occasion page → room** — every link a user or crawler follows exists once. The blog joins it from the News nav link on every page and from the christening hub's planning section; the article links back to the hub, the Southampton listing and Hilton Bournemouth.
 
 ## Architecture
 

@@ -241,3 +241,82 @@ h1 em{font-style:normal;color:var(--ink-accent)}
 .nearby-band h2{font-size:1.25rem}
 .nearby-band .band-why{font-size:.85rem;color:var(--ink-soft)}
 .tag-dist{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:var(--radius-pill)}
+
+/* ============================================================
+   v0.7: Blog (T8 index, T9 article). Tokens only.
+   ============================================================ */
+
+/* Category filter: a chip row where the current category is marked */
+.chip[aria-current="page"]{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+
+/* Featured post: wide card at the top of the blog index */
+.post-feature{display:grid;grid-template-columns:1.2fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);color:var(--ink);transition:border-color .15s}
+.post-feature:hover{border-color:var(--accent);text-decoration:none}
+.post-feature .post-media{aspect-ratio:auto;min-height:300px}
+.post-feature .post-body{padding:30px 32px;display:flex;flex-direction:column;justify-content:center}
+.post-feature h2{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.2;margin:6px 0 10px}
+@media(max-width:760px){.post-feature{grid-template-columns:1fr}.post-feature .post-media{min-height:200px}.post-feature .post-body{padding:22px}}
+
+/* Blog card */
+.post-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);color:var(--ink);transition:border-color .15s,transform .15s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px);text-decoration:none}
+.post-media{aspect-ratio:16/10;background:linear-gradient(135deg,var(--accent-soft),var(--paper));position:relative}
+.post-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.post-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.post-body h3{font-size:1.1rem;line-height:1.3;margin:4px 0 8px}
+.post-cat{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-accent-deep)}
+.post-excerpt{font-size:.93rem;color:var(--ink-soft);margin-bottom:12px}
+.post-meta{margin-top:auto;font-size:.8rem;color:var(--ink-soft)}
+
+/* Pagination */
+.pagination{margin-top:34px}
+.pagination ol{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.pagination a,.pagination span{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 12px;border:1px solid var(--line);border-radius:var(--radius-pill);background:var(--card);font-weight:600;font-size:.92rem;color:var(--ink-soft)}
+.pagination a:hover{border-color:var(--accent);background:var(--accent-soft);text-decoration:none;color:var(--ink)}
+.pagination [aria-current="page"]{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.pagination .gap{border:0;background:none;min-width:auto;padding:0 4px}
+
+/* Article (T9) */
+.article-head{padding:30px 0 6px;max-width:780px}
+.article-head h1{max-width:28ch}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:14px;font-size:.88rem;color:var(--ink-soft)}
+.article-meta .byline{font-weight:700;color:var(--ink)}
+.article-hero{border-radius:var(--radius);overflow:hidden;margin:22px 0 6px;aspect-ratio:21/9;background:linear-gradient(135deg,var(--accent-soft),var(--paper));position:relative}
+.article-hero img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.article-caption{font-size:.8rem;color:var(--ink-soft);margin-bottom:8px}
+.layout-article{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;padding:18px 0 10px;align-items:start}
+.layout-article aside{position:sticky;top:88px}
+@media(max-width:900px){.layout-article{grid-template-columns:1fr}.layout-article aside{position:static}}
+
+.prose{max-width:68ch;font-size:1.06rem;line-height:1.7}
+.prose > * + *{margin-top:16px}
+.prose h2{font-size:1.5rem;line-height:1.25;margin-top:38px;scroll-margin-top:90px}
+.prose h3{font-size:1.18rem;margin-top:26px}
+.prose ul,.prose ol{padding-left:22px}
+.prose li + li{margin-top:6px}
+.prose a{text-decoration:underline;text-decoration-color:var(--accent-line);text-underline-offset:3px}
+.prose a:hover{text-decoration-color:var(--ink-accent)}
+.prose blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 18px;color:var(--ink-soft);font-style:italic}
+.prose .lead{font-size:1.15rem;color:var(--ink-soft)}
+
+/* Key points box at the top of an article */
+.key-points{background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:var(--radius);padding:18px 22px}
+.key-points h2{font-size:1rem;margin:0 0 8px;font-family:var(--font-body);text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.key-points ul{margin:0;padding-left:20px;font-size:.98rem}
+
+/* Contents list in the article aside */
+.toc ol{list-style:none;counter-reset:toc}
+.toc li{counter-increment:toc;padding:6px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.toc li::before{content:counter(toc) ".";color:var(--ink-accent);font-weight:700;margin-right:8px}
+.toc a{color:var(--ink-soft)}
+.toc a:hover{color:var(--ink-accent-deep)}
+
+/* Inline venue suggestions inside an article (the internal-linking win) */
+.venue-inline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+@media(max-width:640px){.venue-inline{grid-template-columns:1fr}}
+
+/* Author box */
+.author-box{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-top:40px}
+.author-box .avatar{flex:none;width:56px;height:56px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent-line);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:var(--ink-accent-deep)}
+.author-box h2{font-size:1rem;margin-bottom:4px}
+.author-box p{font-size:.92rem;color:var(--ink-soft)}
