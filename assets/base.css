@@ -320,3 +320,8 @@ h1 em{font-style:normal;color:var(--ink-accent)}
 .author-box .avatar{flex:none;width:56px;height:56px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent-line);display:grid;place-items:center;font-family:var(--font-display);font-weight:700;color:var(--ink-accent-deep)}
 .author-box h2{font-size:1rem;margin-bottom:4px}
 .author-box p{font-size:.92rem;color:var(--ink-soft)}
+@media(max-width:640px){.article-hero{aspect-ratio:16/10}}
+/* The advertise band is usually the last block inside <main>, so the
+   sibling rule above never matched and a strip of paper showed between
+   it and the footer on every page. */
+main:has(> .advertise:last-child) + .site-footer{margin-top:0}
