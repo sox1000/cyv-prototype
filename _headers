@@ -1,0 +1,6 @@
+# Cloudflare Pages: keep the preview out of search engines. The pages carry
+# their production robots meta (index,follow) for the developer handover, so
+# the preview overrides it with a header. Remove this file only if the
+# prototype itself is ever served on the real domain.
+/*
+  X-Robots-Tag: noindex, nofollow
