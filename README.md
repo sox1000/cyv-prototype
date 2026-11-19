@@ -2,20 +2,24 @@
 
 A static, clickable prototype of the redesigned site. Folder paths mirror **production URLs** exactly, so every prototype page's location is also its future live URL. `{braced}` values in the HTML are data slots the developer maps to view-model fields when converting to Razor.
 
-## What's built (v0.1)
+**Live preview:** https://cyv-prototype.nameless-butterfly-14c0.workers.dev (deploys automatically from `main`; each pull request gets its own preview link). Not indexed by search engines.
+
+URLs follow the live .NET routes exactly, with no trailing slashes, so the launch keeps every indexed address.
+
+## What's built (v0.8)
 
 | Template | Page | Path | Notes |
 |---|---|---|---|
 | T7 Home | ✅ | `/index.html` | Hero search, occasion tiles, featured venues, brand-skin note |
-| T5 Taxonomy index | ✅ | `/event-types/` | Occasion grid with venue-count slots |
-| T6 Occasion hub | ✅ | `/event-types/christening-party/` | UK-wide hub: locations, featured venues, guide, FAQ |
-| T1 Listing | ✅ | `/hire/uk/hampshire/southampton/christening-party/` | Full listing with schema, filters, editorial, FAQ (3 exemplar cards; production loops all 24) |
-| T2 Venue detail | ✅ | `/venues/hilton-bournemouth/` | Real data; Hotel JSON-LD; eager LCP hero |
-| T3 Venue×occasion (indexed) | ✅ | `/venue/hilton-bournemouth/birthday-party/` | HasContent=1: real £44pp package → self-canonical |
-| T3 Venue×occasion (consolidated) | ✅ | `/venue/hilton-bournemouth/christening-party/` | HasContent=0: noindex,follow + canonical→venue — **both policy states demonstrated live** |
-| T4 Room detail | ✅ | `/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/` | Real capacities/dimensions; MeetingRoom JSON-LD |
-| T8 Blog index | ✅ | `/blog/` | Categories (chip row), featured post, card grid, crawlable pagination; `Blog` + BreadcrumbList schema |
-| T9 Blog article | ✅ | `/blog/how-to-plan-a-christening-party/` | `BlogPosting` + BreadcrumbList + FAQPage schema; author/dates, contents, inline related venues, related posts |
+| T5 Taxonomy index | ✅ | `/event-types` | Occasion grid with venue-count slots |
+| T6 Occasion hub | ✅ | `/event-types/christening-party` | UK-wide hub: locations, featured venues, guide, FAQ |
+| T1 Listing | ✅ | `/hire/uk/hampshire/southampton/christening-party` | Full listing with schema, filters, editorial, FAQ (3 exemplar cards; production loops all 24) |
+| T2 Venue detail | ✅ | `/venues/hilton-bournemouth` | Real data; Hotel JSON-LD; eager LCP hero |
+| T3 Venue×occasion (indexed) | ✅ | `/venue/hilton-bournemouth/birthday-party` | HasContent=1: real £44pp package → self-canonical |
+| T3 Venue×occasion (consolidated) | ✅ | `/venue/hilton-bournemouth/christening-party` | HasContent=0: noindex,follow + canonical→venue — **both policy states demonstrated live** |
+| T4 Room detail | ✅ | `/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/27076` | Real capacities/dimensions; MeetingRoom JSON-LD |
+| T8 Blog index | ✅ | `/blog` | Categories (chip row), featured post, card grid, crawlable pagination (proposed `/blog?page={n}`); `Blog` + BreadcrumbList schema |
+| T9 Blog article | ✅ | `/blog/612/how-to-plan-a-christening-party` | `BlogPosting` + BreadcrumbList + FAQPage schema; author/dates, contents, inline related venues, related posts |
 | T10 Offers | ⬜ TODO | — | |
 | T6b Destinations | ⬜ TODO | — | Pending destinations-vs-hire canonical decision |
 | T11–T13 Static/utility | ⬜ TODO | — | |
