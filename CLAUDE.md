@@ -14,14 +14,14 @@ integration by external developers — every page converts to a Razor view.
 - Every new page must be linked from the click journey the same session it's created
 - Performance: no JS, one font pair, eager+fetchpriority only on LCP images, lazy+dimensions everywhere else
 - Yellow .proto-note boxes explain prototype-only behaviour
-- Blog URLs: /blog/, /blog/page/{n}/, /blog/category/{slug}/, /blog/{post-slug}/ (confirm against the live blog before handover; 301 any legacy paths)
+- URLs match the live .NET routes exactly (sox1000/chooseyourvenue, RouteConfigExtensions.cs + controller attributes), no trailing slashes, so launch keeps every indexed URL: /hire/{country}/{county}/{city}/{category}, /venues/{venue}, /venues/{venue}/room-hire/{room}/{id}, /venue/{venue}/{eventType}, /room-hire/{country}/{county}/{city}/{category}, /event-types/{category}, /blog, /blog/{category}, /blog/{newsId}/{slug}, /about-us, /contact-us, /advertising, /venue-styles, /venue-offers. Blog page 2+ proposed as /blog?page={n} (live has load-more only)
 
 ## Build status
 DONE: home / event-types index / christening hub / venue listing (banded results,
 glance card, ECOsmart) / room listing (conference) / wake listing (crematoriums,
 sombre register) / venue detail (12 rooms, ECOsmart, sticky aside) / venue×occasion
 ×2 (indexed + noindex policy states) / room detail (layout gallery, pricing, auto-FAQs) /
-blog index T8 (/blog/) + article T9 (/blog/how-to-plan-a-christening-party/) — v0.7
+blog index T8 (/blog) + article T9 (/blog/612/how-to-plan-a-christening-party) — v0.8 URLs match live routes
 
 TODO (in order): offers index + detail (T10) ·
 destinations hub (T6b — pending canonical decision) · static set (about, contact,

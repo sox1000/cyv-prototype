@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!-- T8 BLOG INDEX — prototype exemplar. Card list + categories + pagination.
-     Page 1 is self-canonical and indexed; /blog/page/{n}/ pages are indexed and
-     self-canonical too (no canonical to page 1, no rel=prev/next needed).
-     Category views (/blog/category/{slug}/) use this same template. -->
+     Page 1 is self-canonical and indexed; later pages are /blog?page={n} (see the pagination note below).
+     Category views (/blog/{category}, BlogController.Category) use this same template. -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,7 @@
  "name":"ChooseYourVenue Blog","url":"https://www.chooseyourvenue.com/blog",
  "publisher":{"@type":"Organization","name":"ChooseYourVenue","url":"https://www.chooseyourvenue.com/"},
  "blogPost":[
-  {"@type":"BlogPosting","headline":"How to plan a christening party","url":"https://www.chooseyourvenue.com/blog/how-to-plan-a-christening-party","datePublished":"2026-10-14","dateModified":"2026-11-02"}
+  {"@type":"BlogPosting","headline":"How to plan a christening party","url":"https://www.chooseyourvenue.com/blog/612/how-to-plan-a-christening-party","datePublished":"2026-10-14","dateModified":"2026-11-02"}
  ]}
 </script>
 <script type="application/ld+json">
@@ -34,10 +33,10 @@
   <div class="wrap">
     <a class="logo" href="/">choose<span>your</span>venue</a>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="/hire/uk/hampshire/southampton/christening-party/">Venue Search</a>
-      <a href="/event-types/">Event Types</a><a href="#">Venue Styles</a><a href="#">Offers</a><a href="/blog/" aria-current="page">News</a>
+      <a href="/hire/uk/hampshire/southampton/christening-party">Venue Search</a>
+      <a href="/event-types">Event Types</a><a href="/venue-styles">Venue Styles</a><a href="/venue-offers">Offers</a><a href="/blog" aria-current="page">News</a>
     </nav>
-    <a class="header-cta" href="#">+ List your venue</a>
+    <a class="header-cta" href="/advertising">+ List your venue</a>
   </div>
 </header>
 
@@ -60,20 +59,20 @@
 
   <nav class="section" aria-label="Blog categories" style="padding-top:22px">
     <div class="chip-row">
-      <a class="chip" href="/blog/" aria-current="page">All</a>
-      <a class="chip" href="#">Family celebrations</a>
-      <a class="chip" href="#">Birthdays</a>
-      <a class="chip" href="#">Christmas</a>
-      <a class="chip" href="#">Business events</a>
-      <a class="chip" href="#">Celebrations of life</a>
-      <a class="chip" href="#">Venue news</a>
+      <a class="chip" href="/blog" aria-current="page">All</a>
+      <a class="chip" href="/blog/family-celebrations">Family celebrations</a>
+      <a class="chip" href="/blog/birthdays">Birthdays</a>
+      <a class="chip" href="/blog/christmas">Christmas</a>
+      <a class="chip" href="/blog/business-events">Business events</a>
+      <a class="chip" href="/blog/celebrations-of-life">Celebrations of life</a>
+      <a class="chip" href="/blog/venue-news">Venue news</a>
     </div>
-    <p class="proto-note">Prototype note: categories come from the blog category table; each chip opens /blog/category/{slug}/, which uses this template with the category name in the H1 and meta. Empty categories are not shown.</p>
+    <p class="proto-note">Prototype note: categories come from the blog category table; each chip opens /blog/{category} (the live route, BlogController.Category), which uses this template with the category name in the H1 and meta. Empty categories are not shown.</p>
   </nav>
 
   <section class="section" style="padding-top:26px" aria-label="Featured article">
     <!-- {featuredPost}: newest post flagged IsFeatured, else the newest post -->
-    <a class="post-feature" href="/blog/how-to-plan-a-christening-party/">
+    <a class="post-feature" href="/blog/612/how-to-plan-a-christening-party">
       <div class="post-media"><img src="https://images.cye-group.com/Assets/64093/big.webp" alt="" width="800" height="533" fetchpriority="high"></div>
       <div class="post-body">
         <span class="post-cat">Family celebrations</span><!-- {post.categoryName} -->
@@ -155,7 +154,7 @@
         <li><a href="#" rel="next">Next</a></li>
       </ol>
     </nav>
-    <p class="proto-note">Prototype note: pagination is plain links to /blog/page/{n}/ (no "load more" button), so every page is crawlable. Page 1 has no "Previous" link; the last page has no "Next".</p>
+    <p class="proto-note">Prototype note: pagination is plain links (no "load more" button), so every page is crawlable. The live site only has a "load more" call (/blog/load-more), so this needs one small change: an optional page number on BlogController.Index, giving /blog?page={n} and /blog/{category}?page={n}. No existing URL changes. Page 1 has no "Previous" link; the last page has no "Next".</p>
   </section>
 </div>
 
@@ -163,7 +162,7 @@
     <div class="wrap">
       <h2>Have a story or offer from <em>your venue</em>?</h2>
       <p>Listed venues can share news, seasonal menus and offers with people planning events across the UK.</p>
-      <a class="btn btn-solid btn-xl" href="#">List your venue</a>
+      <a class="btn btn-solid btn-xl" href="/advertising">List your venue</a>
     </div>
   </section>
 </main>
@@ -171,8 +170,8 @@
 <footer class="site-footer">
   <div class="wrap">
     <div><div class="logo" style="color:#fff">choose<span>your</span>venue</div><p style="margin-top:10px">Chooseyourevent.com Ltd, Taunton TA1 2UH</p></div>
-    <nav aria-label="Footer menu"><h2>Menu</h2><a href="/">Home</a><a href="/event-types/">Event Types</a><a href="/blog/">Blog</a></nav>
-    <nav aria-label="Useful links"><h2>Useful links</h2><a href="#">About us</a><a href="#">Contact us</a></nav>
+    <nav aria-label="Footer menu"><h2>Menu</h2><a href="/">Home</a><a href="/event-types">Event Types</a><a href="/blog">Blog</a></nav>
+    <nav aria-label="Useful links"><h2>Useful links</h2><a href="/about-us">About us</a><a href="/contact-us">Contact us</a></nav>
   </div>
   <div class="legal wrap">© 2004–2026 Chooseyourevent.com Ltd</div>
 </footer>
