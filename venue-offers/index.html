@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- T10a OFFERS INDEX — prototype exemplar (/venue-offers).
+     Route: VenueOffersController [HttpGet("{country?}/{county?}/{city?}")], so the same
+     template serves /venue-offers, /venue-offers/uk/dorset and /venue-offers/uk/dorset/bournemouth.
+     Policy: only LIVE offers are listed (ValidThrough >= today); a location with no live offers
+     renders the empty state as noindex,follow (see proto-note at the foot of the results). -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<title>Venue Special Offers &amp; Packages 2026 | ChooseYourVenue</title>
+<!-- {MetaDescription}: count and season are data slots -->
+<meta name="description" content="38 live special offers from UK venues: Christmas party nights, meeting room deals and dining packages. Every offer is current. Enquire free, direct to the venue.">
+<link rel="canonical" href="https://www.chooseyourvenue.com/venue-offers">
+<meta property="og:type" content="website"><meta property="og:site_name" content="ChooseYourVenue.com"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Venue Special Offers &amp; Packages 2026">
+<meta property="og:url" content="https://www.chooseyourvenue.com/venue-offers">
+<meta property="og:image" content="https://images.cye-group.com/Assets/247323/big.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.chooseyourvenue.com/"},
+ {"@type":"ListItem","position":2,"name":"Special offers"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Venue special offers and packages","numberOfItems":38,
+ "itemListElement":[
+ {"@type":"ListItem","position":1,"item":{"@type":"Offer","name":"Christmas Party Nights 2026","url":"https://www.chooseyourvenue.com/venue-offers/details/4127/christmas-party-nights-2026","validThrough":"2026-12-12","priceCurrency":"GBP","price":"49.00","offeredBy":{"@type":"Hotel","name":"Hilton Bournemouth","url":"https://www.chooseyourvenue.com/venues/hilton-bournemouth"}}},
+ {"@type":"ListItem","position":2,"item":{"@type":"Offer","name":"Winter Meeting Offer","url":"https://www.chooseyourvenue.com/venue-offers/details/4131/winter-meeting-offer","validThrough":"2026-12-31","offeredBy":{"@type":"Hotel","name":"DoubleTree by Hilton London Elstree"}}}
+ ]}
+ <!-- production: foreach live offer on this page (ValidThrough >= today), max 12 -->
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens-cyv.css"><link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">choose<span>your</span>venue</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/hire/uk/hampshire/southampton/christening-party">Venue Search</a>
+      <a href="/event-types">Event Types</a><a href="/venue-styles">Venue Styles</a><a href="/venue-offers" aria-current="page">Offers</a><a href="/blog">News</a>
+    </nav>
+    <a class="header-cta" href="/advertising">+ List your venue</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">Special offers</li>
+    </ol>
+  </nav>
+
+  <section class="hero">
+   <div class="hero-grid">
+    <div>
+    <p class="eyebrow">Live offers from UK venues</p>
+    <h1>Venue special offers <em>&amp; packages</em></h1>
+    <!-- {LastUpdated} = newest offer's DateAdded; {LiveOfferCount} -->
+    <p class="updated">Updated <strong>November 2026</strong> · 38 live offers</p>
+    <div class="intro">
+      <p class="lead">Venues post their best deals here first: Christmas party nights, meeting packages with the room hire thrown in, and dining offers for celebrations of every size. Every offer on this page is live, and each one disappears the day it ends.</p>
+      <p>Filter by place or type of event, check the dates that matter (when the offer runs and when you need to confirm by), then enquire. Your enquiry goes straight to the venue, free, and mentions the offer so they know which price you saw.</p>
+    </div>
+    </div>
+    <aside class="glance-card" aria-label="Offers at a glance">
+      <h2>At a glance</h2>
+      <ul class="glance">
+        <li><span>Live offers</span><span>38</span></li>
+        <li><span>Ending this month</span><span>9</span></li>
+        <li><span>Christmas offers</span><span>14</span></li>
+        <li><span>Venues with offers</span><span>27</span></li>
+      </ul>
+    </aside>
+   </div>
+  </section>
+
+  <div class="layout">
+    <aside class="filters" aria-label="Filter offers">
+      <div class="filters-title">Filter offers</div>
+      <fieldset>
+        <legend>Location</legend>
+        <!-- options link to /venue-offers/{country}/{county}/{city} (path, not query) so each
+             location page is crawlable; only locations with live offers are listed -->
+        <select aria-label="Location"><option>All of the UK</option><option>London</option><option>Dorset</option><option>Hertfordshire</option><option>East Sussex</option><option>Greater Manchester</option></select>
+      </fieldset>
+      <fieldset>
+        <legend>Type of event</legend>
+        <label><input type="checkbox"> Christmas parties</label>
+        <label><input type="checkbox"> Meetings &amp; conferences</label>
+        <label><input type="checkbox"> Private dining</label>
+        <label><input type="checkbox"> Charity &amp; gala dinners</label>
+        <label><input type="checkbox"> Family celebrations</label>
+      </fieldset>
+      <fieldset>
+        <legend>Ending</legend>
+        <label><input type="radio" name="ends"> Any time</label>
+        <label><input type="radio" name="ends"> This month</label>
+        <label><input type="radio" name="ends"> In the next 3 months</label>
+      </fieldset>
+      <button class="filter-apply" type="button">Update offers</button>
+    </aside>
+
+    <section aria-label="Offer results">
+      <div class="results-head">
+        <h2><strong>38</strong> live offers across the UK</h2>
+        <div class="sort">
+          <label for="sort">Sort by</label>
+          <select id="sort"><option>Ending soonest</option><option>Newest first</option><option>Price: low – high</option></select>
+        </div>
+      </div>
+
+      <!-- Offer card = venue-card + offer-value + tag-ends. Slots per card:
+           {OfferName} {OfferUrl} {VenueName} {VenueUrl} {City} {OfferSummary}
+           {HeadlineValue} {EventDatesText} {ValidThrough} (soon = within 14 days) -->
+      <div class="venue-grid">
+        <article class="venue-card">
+          <div class="venue-media"><img src="https://images.cye-group.com/Assets/247323/thumb.webp" alt="Christmas party set-up in the ballroom at Hilton Bournemouth" width="400" height="267" loading="lazy"></div>
+          <div class="venue-body">
+            <h3><a href="/venue-offers/details/4127/christmas-party-nights-2026">Christmas Party Nights 2026</a></h3>
+            <p class="offer-venue"><a href="/venues/hilton-bournemouth">Hilton Bournemouth</a> · Bournemouth, Dorset</p>
+            <p class="offer-value">From £49 per person</p>
+            <p class="venue-desc">Shared party nights in the Phoxtrott Ballroom: welcome drink, three-course festive dinner, DJ and disco until 1am. Private rooms for smaller teams.</p>
+            <div class="venue-meta"><span class="tag">Fri &amp; Sat, 4–19 Dec</span><span class="tag">Up to 360 guests</span><span class="tag-ends soon">Ends 12 Dec 2026</span></div>
+            <div class="venue-actions"><a class="btn btn-solid" href="/venue-offers/details/4127/christmas-party-nights-2026">View offer</a><a class="btn btn-ghost" href="/enquiry/new/2245?enquiryTypeTex=offer">Enquire</a></div>
+          </div>
+        </article>
+
+        <article class="venue-card">
+          <div class="venue-media"><img src="https://images.cye-group.com/Assets/209523/thumb.webp" alt="Boardroom meeting set-up" width="400" height="267" loading="lazy"></div>
+          <div class="venue-body">
+            <h3><a href="#">Winter Meeting Offer</a></h3>
+            <p class="offer-venue"><a href="#">DoubleTree by Hilton London Elstree</a> · Borehamwood, Hertfordshire</p>
+            <p class="offer-value">Room hire free with a day delegate package</p>
+            <p class="venue-desc">For meetings of 30 or more in January to March 2027: the main room is included when you book a full day delegate package.</p>
+            <div class="venue-meta"><span class="tag">Events Jan–Mar 2027</span><span class="tag">30+ delegates</span><span class="tag-ends">Confirm by 31 Dec 2026</span></div>
+            <div class="venue-actions"><a class="btn btn-solid" href="#">View offer</a><a class="btn btn-ghost" href="#">Enquire</a></div>
+          </div>
+        </article>
+
+        <article class="venue-card">
+          <div class="venue-media"><img src="https://images.cye-group.com/Assets/247594/thumb.webp" alt="Festive dining tables" width="400" height="267" loading="lazy"></div>
+          <div class="venue-body">
+            <h3><a href="#">Christmas Party Nights</a></h3>
+            <p class="offer-venue"><a href="#">Holiday Inn Bolton Centre – Cloisters</a> · Bolton, Greater Manchester</p>
+            <p class="offer-value">From £35 per person</p>
+            <p class="venue-desc">Party nights with a festive buffet, resident DJ and late bar, plus a reduced overnight rate for guests staying over.</p>
+            <div class="venue-meta"><span class="tag">Selected dates in December</span><span class="tag-ends soon">Ends 18 Dec 2026</span></div>
+            <div class="venue-actions"><a class="btn btn-solid" href="#">View offer</a><a class="btn btn-ghost" href="#">Enquire</a></div>
+          </div>
+        </article>
+
+        <article class="venue-card">
+          <div class="venue-media"><img src="https://images.cye-group.com/Assets/209524/thumb.webp" alt="Gala dinner set for a charity event" width="400" height="267" loading="lazy"></div>
+          <div class="venue-body">
+            <h3><a href="#">Charity Gala Dining Package</a></h3>
+            <p class="offer-venue"><a href="#">The View Hotel Eastbourne</a> · Eastbourne, East Sussex</p>
+            <p class="offer-value">From £45 per person, room hire included</p>
+            <p class="venue-desc">Three-course dinner, table wine and the sea-view suite for charity balls and fundraising dinners of 80 to 250 guests.</p>
+            <div class="venue-meta"><span class="tag">Events to Mar 2027</span><span class="tag">80–250 guests</span><span class="tag-ends">Ends 31 Mar 2027</span></div>
+            <div class="venue-actions"><a class="btn btn-solid" href="#">View offer</a><a class="btn btn-ghost" href="#">Enquire</a></div>
+          </div>
+        </article>
+
+        <article class="venue-card">
+          <div class="venue-media"><img src="https://images.cye-group.com/Assets/303866/big.webp" alt="Family celebration in a waterside function room" width="400" height="267" loading="lazy"></div>
+          <div class="venue-body">
+            <h3><a href="#">Family Celebrations: Room Hire Free</a></h3>
+            <p class="offer-venue"><a href="#">Harbour Hotel Southampton</a> · Southampton, Hampshire</p>
+            <p class="offer-value">No room hire fee with afternoon tea</p>
+            <p class="venue-desc">Christenings, baby showers and birthday lunches between January and April: the marina-view room is free when you book afternoon tea for 20 or more.</p>
+            <div class="venue-meta"><span class="tag">Events Jan–Apr 2027</span><span class="tag">20+ guests</span><span class="tag-ends">Ends 30 Apr 2027</span></div>
+            <div class="venue-actions"><a class="btn btn-solid" href="#">View offer</a><a class="btn btn-ghost" href="#">Enquire</a></div>
+          </div>
+        </article>
+      </div>
+
+      <nav class="pagination" aria-label="Offer pages">
+        <ol>
+          <li><span aria-current="page">1</span></li>
+          <li><a href="/venue-offers?page=2">2</a></li>
+          <li><a href="/venue-offers?page=3">3</a></li>
+          <li><a href="/venue-offers?page=2" rel="next">Next ›</a></li>
+        </ol>
+      </nav>
+
+      <p class="proto-note"><strong>Prototype note:</strong> sample offers on real venues; only the Hilton Bournemouth card links through (T10b). Production: offers with <code>ValidThrough &lt; today</code> are never listed (the live site still shows offers that ended in July). Page 2+ is <code>/venue-offers?page=n</code> with plain links, self-canonical and noindex,follow, like the blog. A location with no live offers shows "No offers in Dorset right now", links to nearby locations and the venue listing, and is noindex,follow.</p>
+    </section>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="section">
+    <h2>Offers <span>by location</span></h2>
+    <div class="chip-row">
+      <!-- only locations with at least one live offer; count in brackets -->
+      <a class="chip" href="/venue-offers/uk/london">London (11)</a>
+      <a class="chip" href="/venue-offers/uk/dorset">Dorset (4)</a>
+      <a class="chip" href="/venue-offers/uk/hertfordshire">Hertfordshire (3)</a>
+      <a class="chip" href="/venue-offers/uk/greater-manchester">Greater Manchester (3)</a>
+      <a class="chip" href="/venue-offers/uk/east-sussex">East Sussex (2)</a>
+      <a class="chip" href="/venue-offers/uk/hampshire">Hampshire (2)</a>
+    </div>
+  </section>
+</div>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Special offer FAQs</h2>
+    <details><summary>How do I claim an offer?</summary><p class="answer">Choose Enquire on the offer. Your enquiry goes straight to the venue and names the offer, so they can confirm availability and the price you saw. There is no booking fee.</p></details>
+    <details><summary>What's the difference between "ends" and the event dates?</summary><p class="answer">The event dates are when your event must take place to get the offer. The end date is the last day to confirm your booking. Some offers need confirming weeks before the event itself.</p></details>
+    <details><summary>Are these offers still available?</summary><p class="answer">Yes. Only live offers are shown, and each one is removed the day it ends. Availability on your date is up to the venue, so enquire early for popular December weekends.</p></details>
+  </div>
+</section>
+
+<section class="advertise">
+  <div class="wrap">
+    <h2>Have an offer to <em>promote</em>?</h2>
+    <p>List your venue and feature your packages and seasonal deals in front of people planning events across the UK.</p>
+    <a class="btn btn-solid btn-xl" href="/advertising">List your venue</a>
+    <a class="btn btn-ghost btn-xl" href="/contact-us">Contact us</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div><div class="logo" style="color:#fff">choose<span>your</span>venue</div><p style="margin-top:10px">Chooseyourevent.com Ltd, Taunton TA1 2UH</p></div>
+    <nav aria-label="Footer menu"><h2>Menu</h2><a href="/">Home</a><a href="/event-types">Event Types</a><a href="/venue-offers">Special offers</a><a href="/blog">Blog</a></nav>
+    <nav aria-label="Useful links"><h2>Useful links</h2><a href="/about-us">About us</a><a href="/contact-us">Contact us</a></nav>
+  </div>
+  <div class="legal wrap">© 2004–2026 Chooseyourevent.com Ltd</div>
+</footer>
+</body>
+</html>
