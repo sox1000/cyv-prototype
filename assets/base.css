@@ -325,3 +325,31 @@ h1 em{font-style:normal;color:var(--ink-accent)}
    sibling rule above never matched and a strip of paper showed between
    it and the footer on every page. */
 main:has(> .advertise:last-child) + .site-footer{margin-top:0}
+
+/* ============================================================
+   v0.9: Offers (T10a index, T10b detail). Tokens only.
+   An offer card is a venue card with three additions: the offer's
+   headline value, its closing date, and the venue line under the
+   offer title (the offer is the subject; the venue is its context).
+   ============================================================ */
+.offer-value{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--ink-accent-deep);margin:2px 0 8px}
+.tag-ends{background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:var(--radius-pill)}
+.tag-ends.soon{background:var(--accent-soft);border-color:var(--accent-line);color:var(--ink)}
+.offer-venue{font-size:.88rem;color:var(--ink-soft);margin-bottom:6px}
+.offer-venue a{font-weight:700;color:var(--ink)}
+.offer-venue a:hover{color:var(--ink-accent-deep)}
+
+/* Detail: what's included + terms */
+.offer-includes{list-style:none;display:grid;gap:8px;margin-top:10px}
+.offer-includes li{padding-left:24px;position:relative;color:var(--ink-soft)}
+.offer-includes li::before{content:"✓";position:absolute;left:0;color:var(--ink-accent);font-weight:700}
+.offer-terms{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin-top:10px;font-size:.95rem}
+.offer-terms dt{font-weight:700}
+.offer-terms dd{color:var(--ink-soft)}
+@media(max-width:640px){.offer-terms{grid-template-columns:1fr;gap:2px}.offer-terms dd{margin-bottom:8px}}
+
+/* Ended offer state (expired offers are never listed; a direct visit
+   gets this panel, a 410-style message and links onward) */
+.offer-ended{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ink-accent);border-radius:var(--radius);padding:18px 22px;margin-top:18px}
+.offer-ended h2{font-size:1.1rem;margin-bottom:6px}
+.offer-ended p{color:var(--ink-soft)}
