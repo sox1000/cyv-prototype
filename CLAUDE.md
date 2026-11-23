@@ -22,10 +22,10 @@ glance card, ECOsmart) / room listing (conference) / wake listing (crematoriums,
 sombre register) / venue detail (12 rooms, ECOsmart, sticky aside) / venue×occasion
 ×2 (indexed + noindex policy states) / room detail (layout gallery, pricing, auto-FAQs) /
 blog index T8 (/blog) + article T9 (/blog/612/how-to-plan-a-christening-party) — v0.8 URLs match live routes /
-offers index T10a (/venue-offers) + detail T10b (/venue-offers/details/4127/christmas-party-nights-2026) — v0.9
+offers index T10a (/venue-offers) + detail T10b (/venue-offers/details/4127/christmas-party-nights-2026) — v0.9 /
+static set: /about-us, /contact-us, /advertising (sample copy to confirm) — v1.0
 
-TODO (in order): destinations hub (T6b — pending canonical decision) · static set (about, contact,
-advertising) · enquiry flow + thank-you (noindex) · per-template integration specs
+TODO (in order): destinations hub (T6b — pending canonical decision) · enquiry flow + thank-you (noindex) · per-template integration specs
 into docs/specs/ (fields consumed, conditionals, ES queries per docs/occasion-config
 spec, schema blocks)
 

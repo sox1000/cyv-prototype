@@ -6,7 +6,7 @@ A static, clickable prototype of the redesigned site. Folder paths mirror **prod
 
 URLs follow the live .NET routes exactly, with no trailing slashes, so the launch keeps every indexed address.
 
-## What's built (v0.9)
+## What's built (v1.0)
 
 | Template | Page | Path | Notes |
 |---|---|---|---|
@@ -22,6 +22,9 @@ URLs follow the live .NET routes exactly, with no trailing slashes, so the launc
 | T9 Blog article | ✅ | `/blog/612/how-to-plan-a-christening-party` | `BlogPosting` + BreadcrumbList + FAQPage schema; author/dates, contents, inline related venues, related posts |
 | T10a Offers index | ✅ | `/venue-offers` | Live offers only, filters, offer cards (value, event dates, confirm-by), location chips to `/venue-offers/{country}/{county}`; ItemList of `Offer` with `validThrough` |
 | T10b Offer detail | ✅ | `/venue-offers/details/4127/christmas-party-nights-2026` | What's included, dates and terms, sticky enquiry aside, more offers nearby; `Offer` schema while live; ended state (noindex, keeps URL) |
+| About us | ✅ | `/about-us` | Hero with at-a-glance, what we do, how it works; Organization + AboutPage schema. Sample copy to confirm |
+| Contact us | ✅ | `/contact-us` | Accessible form (no JS) with topic choice, contact details and quicker routes; ContactPage schema. Contact details are placeholders |
+| List your venue | ✅ | `/advertising` | Benefits, how it works, two yearly plans (£295 / £495, to confirm), FAQs with FAQPage schema. No testimonials until real ones are supplied |
 | T10 Offers | ⬜ TODO | — | |
 | T6b Destinations | ⬜ TODO | — | Pending destinations-vs-hire canonical decision |
 | T11–T13 Static/utility | ⬜ TODO | — | |
