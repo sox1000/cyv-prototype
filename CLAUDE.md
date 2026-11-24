@@ -12,18 +12,20 @@ integration by external developers — every page converts to a Razor view.
 - British English everywhere; occasion register per docs/occasion-config-filter-registry-spec.md (celebratory/corporate/sombre)
 - Conditional sections: render only when data exists (see room page FAQs/pricing pattern)
 - Every new page must be linked from the click journey the same session it's created
+- CYV is UK-first but global: international pages use the same templates and are indexed only above the venue threshold
 - Performance: no JS, one font pair, eager+fetchpriority only on LCP images, lazy+dimensions everywhere else
 - Yellow .proto-note boxes explain prototype-only behaviour
-- URLs match the live .NET routes exactly (sox1000/chooseyourvenue, RouteConfigExtensions.cs + controller attributes), no trailing slashes, so launch keeps every indexed URL: /hire/{country}/{county}/{city}/{category}, /venues/{venue}, /venues/{venue}/room-hire/{room}/{id}, /venue/{venue}/{eventType}, /room-hire/{country}/{county}/{city}/{category}, /event-types/{category}, /blog, /blog/{category}, /blog/{newsId}/{slug}, /about-us, /contact-us, /advertising, /venue-styles, /venue-offers, /venue-offers/{country}/{county}/{city}, /venue-offers/details/{id}/{seoUrl}. Blog page 2+ proposed as /blog?page={n} (live has load-more only)
+- URLs match the live .NET routes exactly (sox1000/chooseyourvenue, RouteConfigExtensions.cs + controller attributes), no trailing slashes, so launch keeps every indexed URL: /hire/{country}/{county}/{city}/{category}, /venues/{venue}, /venues/{venue}/room-hire/{room}/{id}, /venue/{venue}/{eventType}, /room-hire/{country}/{county}/{city}/{category} (retired: 301s to /hire, see docs/page-rules-cyv-mv.md), /event-types/{category}, /blog, /blog/{category}, /blog/{newsId}/{slug}, /about-us, /contact-us, /advertising, /venue-styles, /venue-offers, /venue-offers/{country}/{county}/{city}, /venue-offers/details/{id}/{seoUrl}. Blog page 2+ proposed as /blog?page={n} (live has load-more only)
 
 ## Build status
 DONE: home / event-types index / christening hub / venue listing (banded results,
-glance card, ECOsmart) / room listing (conference) / wake listing (crematoriums,
+glance card, ECOsmart) / conference venue listing (corporate register, replaces the room listing) / wake listing (crematoriums,
 sombre register) / venue detail (12 rooms, ECOsmart, sticky aside) / venue×occasion
 ×2 (indexed + noindex policy states) / room detail (layout gallery, pricing, auto-FAQs) /
 blog index T8 (/blog) + article T9 (/blog/612/how-to-plan-a-christening-party) — v0.8 URLs match live routes /
 offers index T10a (/venue-offers) + detail T10b (/venue-offers/details/4127/christmas-party-nights-2026) — v0.9 /
-static set: /about-us, /contact-us, /advertising (sample copy to confirm) — v1.0
+static set: /about-us, /contact-us, /advertising (sample copy to confirm) — v1.0 /
+CYV vs Meeting Venues split: page rules doc, /room-hire results retired, corporate event types, room FAQs tied to live fields — v1.1
 
 TODO (in order): destinations hub (T6b — pending canonical decision) · enquiry flow + thank-you (noindex) · per-template integration specs
 into docs/specs/ (fields consumed, conditionals, ES queries per docs/occasion-config
@@ -32,7 +34,9 @@ spec, schema blocks)
 ## Key docs (in /docs)
 occasion-config-filter-registry-spec.md — filters/occasions are CONFIG, not code
 page-policy-engine-spec.md — indexability rules; band-2 never counts
-room-tree-eligibility-43-occasions.md — which occasions get /room-hire pages
+page-rules-cyv-mv.md — which page type owns which search; CYV ranks venues (incl. corporate), Meeting Venues ranks rooms; international rules
+specs/room-page-faqs.md — room page FAQ templates, one per field
+room-tree-eligibility-43-occasions.md — SUPERSEDED by page-rules-cyv-mv.md (/room-hire results retired)
 urgent-seo-fixes + template-architecture — background/audit context
 DynamicSitemap.cs — sitemap implementation for the developer
 

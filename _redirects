@@ -1,0 +1,4 @@
+# Retired /room-hire results pages 301 to the matching /hire venue results.
+# Production: the same rule as a pattern, applied in the .NET router or
+# Cloudflare (see docs/page-rules-cyv-mv.md, "Retiring /room-hire results").
+/room-hire/uk/hampshire/southampton/conference /hire/uk/hampshire/southampton/conference 301
