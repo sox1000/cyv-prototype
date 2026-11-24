@@ -92,10 +92,20 @@ rooms near me" (about 290 clicks) are party searches, and they stay with CYV.
   that category, then `/event-types/{category}`.
 - Remove `/room-hire` from the sitemap (DynamicSitemap.cs) and from all
   internal links.
-- Before switching on: in Search Console, filter Pages by URLs containing
-  "/room-hire/" and not "/venues/", for the last 12 months. Any page with
-  clicks gets a hand-picked redirect target instead of the pattern.
+- Checked in Search Console (12 months to 24 Nov 2026): the 27 `/room-hire`
+  results pages with clicks earned 83 between them, the largest being
+  international (Durban, Laval, Malta). The pattern redirect covers them;
+  check that each target /hire page exists and is indexed.
 - Room pages (`/venues/{venue}/room-hire/...`) are not affected.
+- Older addresses `/{county}/{city}/{category}/room-hire-and-event-space`
+  (and `/{county}/{category}/room-hire-and-event-space`) currently 301 to
+  `/room-hire/...` (RoomController). Change that redirect to point straight
+  at `/hire/{country}/{county}/{city}/{category}`, so there is one hop, not
+  two. These still matter: 149 of them earned 751 clicks in the 12 months
+  to Nov 2026, against 83 clicks for the 27 `/room-hire` results pages.
+- Category slugs stay as they are in the event type and venue style tables
+  (e.g. `funeral-wake`, `birthday-party`, `bars-and-pubs`). Lower-case the
+  target (`/Hotels` becomes `/hotels`).
 
 ## International
 
