@@ -87,37 +87,50 @@
 
   <div class="layout">
     <aside class="filters" aria-label="Filter venues">
+      <!-- Christening filter set (OccasionConfig "christening-party".filters).
+           Every group reads a field the CMS already holds; see
+           docs/specs/filter-field-mapping.md. A group renders only when
+           enough venues on the page have its data. -->
       <div class="filters-title">Filter venues</div>
       <fieldset>
-        <legend>Search radius</legend>
-        <select aria-label="Search radius"><option>All results</option><option>1 mile</option><option>5 miles</option><option>10 miles</option></select>
+        <legend>Near your church</legend><!-- near_poi: computed from venue postcode vs church POI table -->
+        <select aria-label="Choose a church"><option>Any church</option><option>St Mary's, Southampton</option><option>Highfield Church</option><option>St Joseph's, Bugle Street</option></select>
+        <select aria-label="Distance from church"><option>Within 1 mile</option><option>Within 3 miles</option><option>Within 5 miles</option></select>
       </fieldset>
       <fieldset>
-        <legend>Venue type</legend>
+        <legend>Guests</legend><!-- Venue Caters For › Christening Party › Max Capacity (fallback: largest room) -->
+        <label><input type="radio" name="cap"> Up to 30</label>
+        <label><input type="radio" name="cap"> 30–60</label>
+        <label><input type="radio" name="cap"> 60–100</label>
+        <label><input type="radio" name="cap"> 100+</label>
+      </fieldset>
+      <fieldset>
+        <legend>Price per head</legend><!-- Venue Caters For › Christening Party › Packages from (per person) -->
+        <label><input type="radio" name="pp"> Under £20</label>
+        <label><input type="radio" name="pp"> £20–£35</label>
+        <label><input type="radio" name="pp"> £35+</label>
+      </fieldset>
+      <fieldset>
+        <legend>For families</legend><!-- Venue Facilities -->
+        <label><input type="checkbox"> Children's facilities</label><!-- Children's Facilities -->
+        <label><input type="checkbox"> Garden or outdoor space</label><!-- Outdoor Space OR Onsite gardens -->
+        <label><input type="checkbox"> Food on site</label><!-- Kitchen and food onsite OR Restaurant -->
+        <label><input type="checkbox"> Parking</label><!-- Parking OR Carpark -->
+        <label><input type="checkbox"> Disabled access</label><!-- Disabled Access -->
+      </fieldset>
+      <fieldset>
+        <legend>Venue type</legend><!-- Venue Types; top 4 by count on this page -->
         <label><input type="checkbox"> Hotels with function rooms</label>
         <label><input type="checkbox"> Bars &amp; pubs with function rooms</label>
-        <label><input type="checkbox"> Restaurant venues</label>
+        <label><input type="checkbox"> Country house &amp; mansion venues</label>
         <label><input type="checkbox"> Halls for hire</label>
       </fieldset>
       <fieldset>
-        <legend>Capacity</legend>
-        <label><input type="radio" name="cap"> Up to 50</label>
-        <label><input type="radio" name="cap"> 50–100</label>
-        <label><input type="radio" name="cap"> 100–300</label>
-        <label><input type="radio" name="cap"> 300+</label>
-      </fieldset>
-      <fieldset>
         <legend>Accreditations</legend>
-        <label><input type="checkbox"> ECOsmart (sustainable events)</label>
-      </fieldset>
-      <fieldset>
-        <legend>Facilities</legend>
-        <label><input type="checkbox"> Children's facilities</label>
-        <label><input type="checkbox"> Disabled access</label>
-        <label><input type="checkbox"> Parking</label>
-        <label><input type="checkbox"> Outdoor space</label>
+        <label><input type="checkbox"> ECOsmart (sustainable events)</label><!-- ECOsmart Venues -->
       </fieldset>
       <button class="filter-apply" type="button">Update results</button>
+      <p class="proto-note"><strong>Prototype note:</strong> christening filters differ from conference ones. Guests and price per head use the venue's own christening figures from "Venue Caters For", not general capacity.</p>
     </aside>
 
     <section aria-label="Venue results">
@@ -136,7 +149,8 @@
             <h3><a href="/venue/hilton-bournemouth/christening-party">New Place Hotel</a></h3>
             <p class="venue-loc">High Street, Shirrell Heath, Southampton SO32 2JY</p>
             <p class="venue-desc">A Grade I listed manor in 32 acres of grounds, with garden-view function rooms suited to relaxed family receptions and afternoon-tea christening parties.</p>
-            <div class="venue-meta"><span class="tag">33 rooms</span><span class="tag">Up to 150 guests</span><span class="tag">Free parking</span><span class="tag-eco" title="ECOsmart accredited by Greengage">ECOsmart</span></div>
+            <!-- card tags: {OccasionMaxCapacity} · {OccasionPackageFrom}pp · first matching family facility -->
+            <div class="venue-meta"><span class="tag">Christenings up to 120 guests</span><span class="tag">Packages from £28pp</span><span class="tag">Gardens</span><span class="tag-eco" title="ECOsmart accredited by Greengage">ECOsmart</span></div>
             <div class="venue-actions"><a class="btn btn-solid" href="/venue/hilton-bournemouth/christening-party">View venue</a><a class="btn btn-ghost" href="#">Add to shortlist</a></div>
           </div>
         </article>
@@ -147,7 +161,7 @@
             <h3><a href="/venue/hilton-bournemouth/christening-party">Harbour Hotel Southampton</a></h3>
             <p class="venue-loc">5 Maritime Walk, Ocean Village, Southampton SO14 3QT</p>
             <p class="venue-desc">Striking waterside hotel at Ocean Village with marina-view event spaces — a memorable backdrop for a milestone family celebration.</p>
-            <div class="venue-meta"><span class="tag">Up to 350 guests</span><span class="tag">Marina views</span><span class="tag">In-house catering</span><span class="tag-eco" title="ECOsmart accredited by Greengage">ECOsmart</span></div>
+            <div class="venue-meta"><span class="tag">Christenings up to 200 guests</span><span class="tag">Packages from £35pp</span><span class="tag">Children's facilities</span><span class="tag-eco" title="ECOsmart accredited by Greengage">ECOsmart</span></div>
             <div class="venue-actions"><a class="btn btn-solid" href="/venue/hilton-bournemouth/christening-party">View venue</a><a class="btn btn-ghost" href="#">Add to shortlist</a></div>
           </div>
         </article>
@@ -158,7 +172,7 @@
             <h3><a href="/venue/hilton-bournemouth/christening-party">Blue Funnel Cruises</a></h3>
             <p class="venue-loc">Town Quay, Southampton SO14 2AQ</p>
             <p class="venue-desc">Something different: a private cruise on Southampton Water aboard Ocean Scene — a christening party your guests won't forget.</p>
-            <div class="venue-meta"><span class="tag">Up to 340 guests</span><span class="tag">On the water</span><span class="tag">From £295</span></div>
+            <div class="venue-meta"><span class="tag">Christenings up to 150 guests</span><span class="tag">Packages from £22pp</span><span class="tag">On the water</span></div>
             <div class="venue-actions"><a class="btn btn-solid" href="/venue/hilton-bournemouth/christening-party">View venue</a><a class="btn btn-ghost" href="#">Add to shortlist</a></div>
           </div>
         </article>

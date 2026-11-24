@@ -36,6 +36,7 @@ occasion-config-filter-registry-spec.md — filters/occasions are CONFIG, not co
 page-policy-engine-spec.md — indexability rules; band-2 never counts
 page-rules-cyv-mv.md — which page type owns which search; CYV ranks venues (incl. corporate), Meeting Venues ranks rooms; international rules
 specs/room-page-faqs.md — room page FAQ templates, one per field
+specs/filter-field-mapping.md — CMS field behind each filter; filter set per occasion; fields to add
 room-tree-eligibility-43-occasions.md — SUPERSEDED by page-rules-cyv-mv.md (/room-hire results retired)
 urgent-seo-fixes + template-architecture — background/audit context
 DynamicSitemap.cs — sitemap implementation for the developer
