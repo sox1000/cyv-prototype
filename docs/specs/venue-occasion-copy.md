@@ -65,3 +65,45 @@ the venue's approval.
 Unchanged from the page policy engine: pages with occasion content (own
 text, template with data, or a package) are indexed with a self-canonical.
 Any page that already earns clicks stays indexed whatever its copy.
+
+## Seasonal packages (Christmas party nights and similar)
+
+Christmas packages are entered as free text today (dates, price and an
+itinerary in one description), so nothing knows when they are out of date
+and they have to be removed by hand each January.
+
+Give packages structured dates instead:
+
+| Field | Example |
+|---|---|
+| Package name | Festive Party Nights |
+| Type | Shared party night / Private party |
+| Price from (per person, inc VAT) | 65 |
+| Dates | 4, 5, 11, 12 Dec 2026 (date picker, one or more) |
+| Minimum guests (private) | 100 |
+| Valid until | worked out: the last date, or set by hand |
+| Description / itinerary | free text, as now |
+
+What the site does with them:
+- **Hide automatically** the day after the last date (or Valid until).
+  No manual clean-up.
+- **The page never goes empty.** When the season's packages have expired,
+  the Christmas page stays live and indexed (it keeps its rankings) and
+  shows: "{Venue}'s {next year} Christmas packages are coming soon. Enquire
+  now to be first to hear." with the enquiry form.
+- **Year in the title only while packages are live**, taken from the dates:
+  "Christmas Party at Stirrups Hotel 2026 | Party Nights from £65pp".
+  Without live packages, the title drops the year and the price.
+- **Dates show as chips**, with past dates greyed out as the season runs,
+  and "Sold out" if the venue marks one.
+- **Schema:** each package is an Offer with `validThrough` set to the last
+  date; shared party nights can also carry Event markup with the dates.
+- **Results cards and filters** (Christmas: shared or private party nights,
+  dates available) read the same fields, so expired nights never show.
+- **Venue reminders:** in August, email venues with expired Christmas
+  packages: "Add your {year} Christmas packages", with last year's copied
+  in as a draft to edit. A second nudge in September for those who haven't.
+
+The same fields work for any seasonal package (New Year's Eve, Mother's
+Day, summer parties) and match how venue offers already expire
+(`/venue-offers`, ValidThrough).
