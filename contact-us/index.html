@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- STATIC SET: CONTACT (/contact-us). Live route: /contact-us. Contact details are
+     SAMPLE slots ({SupportEmail} {SupportPhone} {OfficeHours}) read from site settings. No JS. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow">
+<title>Contact Us | ChooseYourVenue</title>
+<meta name="description" content="Get in touch with ChooseYourVenue about listing your venue, your venue account or using the site. We reply within one working day.">
+<link rel="canonical" href="https://www.chooseyourvenue.com/contact-us">
+<meta property="og:type" content="website"><meta property="og:site_name" content="ChooseYourVenue.com"><meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Contact Us">
+<meta property="og:url" content="https://www.chooseyourvenue.com/contact-us">
+<meta property="og:image" content="https://images.cye-group.com/Assets/247323/big.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"Home","item":"https://www.chooseyourvenue.com/"},
+ {"@type":"ListItem","position":2,"name":"Contact us"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://www.chooseyourvenue.com/#org","name":"ChooseYourVenue.com","legalName":"Chooseyourevent.com Ltd","url":"https://www.chooseyourvenue.com/","foundingDate":"2004",
+ "address":{"@type":"PostalAddress","addressLocality":"Taunton","postalCode":"TA1 2UH","addressCountry":"GB"}}
+ <!-- production: add contactPoint {email, telephone} from site settings -->
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ContactPage","name":"Contact ChooseYourVenue","url":"https://www.chooseyourvenue.com/contact-us","about":{"@id":"https://www.chooseyourvenue.com/#org"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/tokens-cyv.css"><link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">choose<span>your</span>venue</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/hire/uk/hampshire/southampton/christening-party">Venue Search</a>
+      <a href="/event-types">Event Types</a><a href="/venue-styles">Venue Styles</a><a href="/venue-offers">Offers</a><a href="/blog">News</a>
+    </nav>
+    <a class="header-cta" href="/advertising">+ List your venue</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li aria-current="page">Contact us</li>
+    </ol>
+  </nav>
+</div>
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">We're here to help</p>
+    <h1>Contact <em>us</em></h1>
+    <div class="intro"><p>Questions about the site, listing your venue, or something not working as it should? Send us a message and we'll reply within one working day.</p></div>
+  </section>
+
+  <div class="contact-layout">
+    <section class="form-card" aria-labelledby="form-h">
+      <h2 id="form-h">Send us a message</h2>
+      <p>All fields are required unless marked optional.</p>
+      <!-- action = existing ContactUs POST. Validate server-side and verify the captcha
+           token (the site review found submissions accepted unverified). On error, keep
+           what the user typed. -->
+      <form action="/contact-us" method="post">
+        <div class="form-grid">
+          <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="c-email">Email address</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="c-phone">Phone (optional)</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="c-venue">Venue name (optional)</label><input id="c-venue" name="venue" autocomplete="organization"></div>
+          <div class="field full">
+            <fieldset>
+              <legend>What's it about?</legend>
+              <div class="radio-row">
+                <label><input type="radio" name="topic" value="planning" required> Planning an event</label>
+                <label><input type="radio" name="topic" value="listing"> Listing my venue</label>
+                <label><input type="radio" name="topic" value="account"> My venue account</label>
+                <label><input type="radio" name="topic" value="other"> Something else</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="field full"><label for="c-msg">Your message</label><textarea id="c-msg" name="message" required></textarea></div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-solid btn-xl" type="submit">Send message</button>
+          <small>We only use your details to reply to you.</small>
+        </div>
+      </form>
+    </section>
+
+    <aside>
+      <div class="aside-card">
+        <h2>Get in touch</h2>
+        <ul class="contact-list">
+          <!-- {SupportEmail} --><li><span class="k">Email</span><span class="v">hello@chooseyourvenue.com</span></li>
+          <!-- {SupportPhone} --><li><span class="k">Phone</span><span class="v">01823 000000</span></li>
+          <!-- {OfficeHours} --><li><span class="k">Office hours</span><span class="v">Monday to Friday, 9am to 5pm</span></li>
+          <!-- {CompanyAddress} --><li><span class="k">Address</span><span class="v">Chooseyourevent.com Ltd, Taunton TA1 2UH</span></li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h2>Quicker routes</h2>
+        <ul class="route-list">
+          <li><a href="/hire/uk/hampshire/southampton/christening-party">Enquiring about a venue?<span>Use the Enquire button on the venue's page: it goes straight to them.</span></a></li>
+          <li><a href="/advertising">Want to list your venue?<span>See what's included and how to get started.</span></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+  <p class="proto-note"><strong>Prototype note:</strong> the email, phone and hours are placeholders: please supply the real ones. The thank-you page after sending is noindex.</p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <!-- {CompanyName}, {CompanyAddress} -->
+    <div><div class="logo" style="color:#fff">choose<span>your</span>venue</div><p style="margin-top:10px">Chooseyourevent.com Ltd, Taunton TA1 2UH</p></div>
+    <nav aria-label="Footer menu"><h2>Menu</h2><a href="/">Home</a><a href="/event-types">Event Types</a><a href="/venue-offers">Special offers</a><a href="/blog">Blog</a></nav>
+    <nav aria-label="Useful links"><h2>Useful links</h2><a href="/about-us">About us</a><a href="/contact-us">Contact us</a><a href="/advertising">List your venue</a></nav>
+  </div>
+  <div class="legal wrap">© 2004–2026 Chooseyourevent.com Ltd</div>
+</footer>
+</body>
+</html>

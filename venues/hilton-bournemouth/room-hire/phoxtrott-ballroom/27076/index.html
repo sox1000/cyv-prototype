@@ -36,12 +36,12 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
- {"@type":"Question","name":"How many guests does the Phoxtrott Ballroom hold?","acceptedAnswer":{"@type":"Answer","text":"Up to 360 guests theatre-style, 270 for a banquet, 240 for dinner, 208 cabaret, 204 for a standing reception and 146 classroom-style."}},
- {"@type":"Question","name":"How much does it cost to hire the Phoxtrott Ballroom?","acceptedAnswer":{"@type":"Answer","text":"Room hire starts from £600 for a half day, £950 for a full day and £750 for evening hire, with day delegate packages from £40 per person. Rates vary by date and season — enquire for a quote."}},
- {"@type":"Question","name":"Can the Phoxtrott Ballroom be set up for a sit-down dinner?","acceptedAnswer":{"@type":"Answer","text":"Yes — the ballroom seats up to 270 guests banquet-style or 240 for a formal dinner, with space remaining for a dance floor and stage."}},
- {"@type":"Question","name":"Does the Phoxtrott Ballroom have its own bar?","acceptedAnswer":{"@type":"Answer","text":"Yes, the ballroom has a private bar and its own drinks reception area, so your event is fully self-contained."}},
- {"@type":"Question","name":"What events is the Phoxtrott Ballroom suitable for?","acceptedAnswer":{"@type":"Answer","text":"Its 360-guest capacity, private bar and stage suit gala dinners, award ceremonies, wedding receptions, large birthday parties, Christmas parties, conferences and charity balls."}},
- {"@type":"Question","name":"How big is the Phoxtrott Ballroom?","acceptedAnswer":{"@type":"Answer","text":"The room measures 19.5m by 17.5m (341 square metres) with a 4.9m ceiling height."}}]}
+ {"@type": "Question", "name": "How many guests can the Phoxtrott Ballroom hold?", "acceptedAnswer": {"@type": "Answer", "text": "The Phoxtrott Ballroom holds up to 360 guests theatre-style. For a seated banquet it takes 270, and for a standing reception 204."}},
+ {"@type": "Question", "name": "What layouts can the Phoxtrott Ballroom be set up in?", "acceptedAnswer": {"@type": "Answer", "text": "Theatre for 360, banquet for 270, dinner for 240, cabaret for 208, reception for 204 and classroom for 146."}},
+ {"@type": "Question", "name": "How much does it cost to hire the Phoxtrott Ballroom?", "acceptedAnswer": {"@type": "Answer", "text": "Room hire starts from £600. The final price depends on your date, timings and catering, so ask Hilton Bournemouth for an exact quote. There is no booking fee."}},
+ {"@type": "Question", "name": "How big is the Phoxtrott Ballroom?", "acceptedAnswer": {"@type": "Answer", "text": "The room measures 341 square metres (about 3,670 sq ft)."}},
+ {"@type": "Question", "name": "What events is the Phoxtrott Ballroom suitable for?", "acceptedAnswer": {"@type": "Answer", "text": "Hilton Bournemouth offers the Phoxtrott Ballroom for birthday parties, Christmas parties, wedding receptions, conferences, gala dinners, award ceremonies and charity balls."}},
+ {"@type": "Question", "name": "What other rooms are there at Hilton Bournemouth?", "acceptedAnswer": {"@type": "Answer", "text": "Hilton Bournemouth has 11 other rooms for hire, including Rule, Centrefold, Balance & Blot (up to 112 guests), Centrefold, Balance & Blot (up to 84) and Balance & Blot (up to 56)."}}]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -214,18 +214,25 @@
   </div>
 </div>
 
-<!-- NEW: auto-generated FAQs. Each Q&A is a template keyed to a data field,
-     rendered only when the room has that data — so every room's FAQ set is
-     unique, accurate, and matches the FAQPage schema word-for-word. -->
+<!-- Auto-generated FAQs. Each question is a template tied to one field CYV
+     already holds, and renders only when the room has that data. Schema
+     text matches the visible text word for word. Spec: docs/specs/room-page-faqs.md -->
 <section class="faq">
   <div class="wrap">
     <h2>Phoxtrott Ballroom FAQs</h2>
-    <details><summary>How many guests does the Phoxtrott Ballroom hold?</summary><p class="answer">Up to 360 guests theatre-style, 270 for a banquet, 240 for dinner, 208 cabaret, 204 for a standing reception and 146 classroom-style.</p></details>
-    <details><summary>How much does it cost to hire the Phoxtrott Ballroom?</summary><p class="answer">Room hire starts from £600 for a half day, £950 for a full day and £750 for evening hire, with day delegate packages from £40 per person. Rates vary by date and season — enquire for a quote.</p></details>
-    <details><summary>Can the Phoxtrott Ballroom be set up for a sit-down dinner?</summary><p class="answer">Yes — the ballroom seats up to 270 guests banquet-style or 240 for a formal dinner, with space remaining for a dance floor and stage.</p></details>
-    <details><summary>Does the Phoxtrott Ballroom have its own bar?</summary><p class="answer">Yes, the ballroom has a private bar and its own drinks reception area, so your event is fully self-contained.</p></details>
-    <details><summary>What events is the Phoxtrott Ballroom suitable for?</summary><p class="answer">Its 360-guest capacity, private bar and stage suit gala dinners, award ceremonies, wedding receptions, large birthday parties, Christmas parties, conferences and charity balls.</p></details>
-    <details><summary>How big is the Phoxtrott Ballroom?</summary><p class="answer">The room measures 19.5m by 17.5m (341 square metres) with a 4.9m ceiling height.</p></details>
+    <p class="proto-note"><strong>Prototype note:</strong> every answer is built from data the room record already has (capacities, price from, room size, event types, other rooms). Nothing is written by hand, and a question is left out when its field is empty. Questions that would read the same on every room, such as "how do I enquire", are left out on purpose.</p>
+    <!-- {MaxCapacity, largest seated and standing layouts} -->
+    <details><summary>How many guests can the Phoxtrott Ballroom hold?</summary><p class="answer">The Phoxtrott Ballroom holds up to 360 guests theatre-style. For a seated banquet it takes 270, and for a standing reception 204.</p></details>
+    <!-- {meeting-type capacities, largest first} -->
+    <details><summary>What layouts can the Phoxtrott Ballroom be set up in?</summary><p class="answer">Theatre for 360, banquet for 270, dinner for 240, cabaret for 208, reception for 204 and classroom for 146.</p></details>
+    <!-- {PriceFrom} -->
+    <details><summary>How much does it cost to hire the Phoxtrott Ballroom?</summary><p class="answer">Room hire starts from £600. The final price depends on your date, timings and catering, so ask Hilton Bournemouth for an exact quote. There is no booking fee.</p></details>
+    <!-- {RoomSize, converted to sq ft} -->
+    <details><summary>How big is the Phoxtrott Ballroom?</summary><p class="answer">The room measures 341 square metres (about 3,670 sq ft).</p></details>
+    <!-- {room event types} -->
+    <details><summary>What events is the Phoxtrott Ballroom suitable for?</summary><p class="answer">Hilton Bournemouth offers the Phoxtrott Ballroom for birthday parties, Christmas parties, wedding receptions, conferences, gala dinners, award ceremonies and charity balls.</p></details>
+    <!-- {other rooms at the venue, largest first, top 3 named} -->
+    <details><summary>What other rooms are there at Hilton Bournemouth?</summary><p class="answer">Hilton Bournemouth has 11 other rooms for hire, including Rule, Centrefold, Balance &amp; Blot (up to 112 guests), Centrefold, Balance &amp; Blot (up to 84) and Balance &amp; Blot (up to 56).</p></details>
   </div>
 </section>
 </main>

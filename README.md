@@ -6,7 +6,7 @@ A static, clickable prototype of the redesigned site. Folder paths mirror **prod
 
 URLs follow the live .NET routes exactly, with no trailing slashes, so the launch keeps every indexed address.
 
-## What's built (v0.9)
+## What's built (v1.1)
 
 | Template | Page | Path | Notes |
 |---|---|---|---|
@@ -17,14 +17,19 @@ URLs follow the live .NET routes exactly, with no trailing slashes, so the launc
 | T2 Venue detail | ✅ | `/venues/hilton-bournemouth` | Real data; Hotel JSON-LD; eager LCP hero |
 | T3 Venue×occasion (indexed) | ✅ | `/venue/hilton-bournemouth/birthday-party` | HasContent=1: real £44pp package → self-canonical |
 | T3 Venue×occasion (consolidated) | ✅ | `/venue/hilton-bournemouth/christening-party` | HasContent=0: noindex,follow + canonical→venue — **both policy states demonstrated live** |
-| T4 Room detail | ✅ | `/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/27076` | Real capacities/dimensions; MeetingRoom JSON-LD |
+| T1 Listing, corporate | ✅ | `/hire/uk/hampshire/southampton/conference` | Venue results for a corporate occasion; one link to Meeting Venues for single rooms. Replaces the /room-hire listing, which 301s here (`_redirects`) |
+| T4 Room detail | ✅ | `/venues/hilton-bournemouth/room-hire/phoxtrott-ballroom/27076` | Real capacities/dimensions; MeetingRoom JSON-LD; FAQs built from live room fields (docs/specs/room-page-faqs.md) |
 | T8 Blog index | ✅ | `/blog` | Categories (chip row), featured post, card grid, crawlable pagination (proposed `/blog?page={n}`); `Blog` + BreadcrumbList schema |
 | T9 Blog article | ✅ | `/blog/612/how-to-plan-a-christening-party` | `BlogPosting` + BreadcrumbList + FAQPage schema; author/dates, contents, inline related venues, related posts |
 | T10a Offers index | ✅ | `/venue-offers` | Live offers only, filters, offer cards (value, event dates, confirm-by), location chips to `/venue-offers/{country}/{county}`; ItemList of `Offer` with `validThrough` |
 | T10b Offer detail | ✅ | `/venue-offers/details/4127/christmas-party-nights-2026` | What's included, dates and terms, sticky enquiry aside, more offers nearby; `Offer` schema while live; ended state (noindex, keeps URL) |
-| T10 Offers | ⬜ TODO | — | |
+| About us | ✅ | `/about-us` | Hero with at-a-glance, what we do, how it works; Organization + AboutPage schema. Sample copy to confirm |
+| Contact us | ✅ | `/contact-us` | Accessible form (no JS) with topic choice, contact details and quicker routes; ContactPage schema. Contact details are placeholders |
+| List your venue | ✅ | `/advertising` | Benefits, how it works, two yearly plans (£295 / £495, to confirm), FAQs with FAQPage schema. No testimonials until real ones are supplied |
 | T6b Destinations | ⬜ TODO | — | Pending destinations-vs-hire canonical decision |
 | T11–T13 Static/utility | ⬜ TODO | — | |
+
+Page rules for CYV and Meeting Venues (who owns which search): `docs/page-rules-cyv-mv.md`.
 
 The exemplar journey: **Home → Event Types → Christening hub → Southampton listing → venue → occasion page → room** — every link a user or crawler follows exists once. The blog joins it from the News nav link on every page and from the christening hub's planning section; the article links back to the hub, the Southampton listing and Hilton Bournemouth. Offers join from the Offers nav link; the offer page links to Hilton Bournemouth, whose page shows the offer in its sidebar.
 
