@@ -27,9 +27,10 @@ offers index T10a (/venue-offers) + detail T10b (/venue-offers/details/4127/chri
 static set: /about-us, /contact-us, /advertising (sample copy to confirm) — v1.0 /
 CYV vs Meeting Venues split: page rules doc, /room-hire results retired, corporate event types, room FAQs tied to live fields — v1.1 /
 venue styles: /venue-styles index (inspiration), cinema hub /venue-styles/cinema-private-screening-rooms, cinema venue /venues/vue-cinema-northampton (screens as rooms, party packages) + venue×occasion /venue/vue-cinema-northampton/birthday-party, product launch /hire/uk/bristol/bristol/product-launch (unusual venues + Longleat nearby) — v1.2 /
-virtual tours /matterport-venue-virtual-tours (by style, occasion, region), groups index /groups (URL to confirm) + /group/showcase-cinemas; nav matches live menu (adds Virtual Tours, Groups) — v1.3
+virtual tours /matterport-venue-virtual-tours (by style, occasion, region), groups index /groups (URL to confirm) + /group/showcase-cinemas; nav matches live menu (adds Virtual Tours, Groups, Christmasvenues.com) — v1.3 /
+destinations hub T6b at /venue-directory (decided 24 Nov 2026: keeps the live URL, replaces Map Search; Venue Search in the menu points here) — v1.4
 
-TODO (in order): destinations hub (T6b — pending canonical decision) · enquiry flow + thank-you (noindex) · per-template integration specs
+TODO (in order): enquiry flow + thank-you (noindex) · per-template integration specs
 into docs/specs/ (fields consumed, conditionals, ES queries per docs/occasion-config
 spec, schema blocks)
 
