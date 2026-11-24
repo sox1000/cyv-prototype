@@ -46,6 +46,8 @@ Purpose: eliminate per-occasion template work. The listing template (T1/T1-R) re
 
 ## 2. FilterRegistry — each filter group maps to Elasticsearch
 
+Which CMS field feeds each filter, and the filter set per occasion: docs/specs/filter-field-mapping.md.
+
 ```json
 {
   "filterKey": "capacity",

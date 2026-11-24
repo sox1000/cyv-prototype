@@ -91,36 +91,48 @@
 
   <div class="layout">
     <aside class="filters" aria-label="Filter venues">
+      <!-- Conference filter set (OccasionConfig "conference".filters).
+           Fields: docs/specs/filter-field-mapping.md -->
       <div class="filters-title">Filter venues</div>
       <fieldset>
         <legend>Search radius</legend>
         <select aria-label="Search radius"><option>All results</option><option>1 mile</option><option>5 miles</option><option>10 miles</option></select>
       </fieldset>
       <fieldset>
-        <legend>Venue type</legend>
-        <label><input type="checkbox"> Hotels with function rooms</label>
-        <label><input type="checkbox"> Bars &amp; pubs with function rooms</label>
-        <label><input type="checkbox"> Restaurant venues</label>
-        <label><input type="checkbox"> Halls for hire</label>
+        <legend>Near</legend><!-- near_poi: computed from venue postcode vs station/airport POI table -->
+        <select aria-label="Near a station or airport"><option>Anywhere</option><option>Southampton Central station</option><option>Southampton Airport Parkway</option></select>
       </fieldset>
       <fieldset>
-        <legend>Delegates (theatre)</legend>
+        <legend>Delegates</legend><!-- Venue Caters For › Conference › Max Capacity (fallback: largest theatre layout) -->
         <label><input type="radio" name="cap"> Up to 50</label>
         <label><input type="radio" name="cap"> 50–150</label>
         <label><input type="radio" name="cap"> 150–400</label>
         <label><input type="radio" name="cap"> 400+</label>
       </fieldset>
       <fieldset>
-        <legend>Accreditations</legend>
-        <label><input type="checkbox"> ECOsmart (sustainable events)</label>
+        <legend>Day delegate rate</legend><!-- Rates & capacities › Day delegate rates from -->
+        <label><input type="radio" name="ddr"> Under £40</label>
+        <label><input type="radio" name="ddr"> £40–£60</label>
+        <label><input type="radio" name="ddr"> £60+</label>
       </fieldset>
       <fieldset>
         <legend>Facilities</legend>
-        <label><input type="checkbox"> Breakout rooms</label>
-        <label><input type="checkbox"> Exhibition space</label>
-        <label><input type="checkbox"> Bedrooms on site</label>
-        <label><input type="checkbox"> Parking</label>
-        <label><input type="checkbox"> Disabled access</label>
+        <label><input type="checkbox"> Bedrooms on site</label><!-- Total Bedrooms > 0 OR Accommodation -->
+        <label><input type="checkbox"> Breakout rooms</label><!-- Total Event Spaces >= 2 -->
+        <label><input type="checkbox"> AV equipment</label><!-- AV Equipment Hire -->
+        <label><input type="checkbox"> Parking</label><!-- Parking OR Carpark -->
+        <label><input type="checkbox"> Disabled access</label><!-- Disabled Access -->
+      </fieldset>
+      <fieldset>
+        <legend>Venue type</legend><!-- Venue Types; top 4 by count on this page -->
+        <label><input type="checkbox"> Conference venues</label>
+        <label><input type="checkbox"> Hotels with function rooms</label>
+        <label><input type="checkbox"> Country house &amp; mansion venues</label>
+        <label><input type="checkbox"> Football &amp; cricket club venues</label>
+      </fieldset>
+      <fieldset>
+        <legend>Accreditations</legend>
+        <label><input type="checkbox"> ECOsmart (sustainable events)</label>
       </fieldset>
       <button class="filter-apply" type="button">Update results</button>
     </aside>
