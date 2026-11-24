@@ -26,7 +26,7 @@ blog index T8 (/blog) + article T9 (/blog/612/how-to-plan-a-christening-party) �
 offers index T10a (/venue-offers) + detail T10b (/venue-offers/details/4127/christmas-party-nights-2026) — v0.9 /
 static set: /about-us, /contact-us, /advertising (sample copy to confirm) — v1.0 /
 CYV vs Meeting Venues split: page rules doc, /room-hire results retired, corporate event types, room FAQs tied to live fields — v1.1 /
-venue styles: /venue-styles index (inspiration), cinema hub /venue-styles/cinema-private-screening-rooms, cinema venue /venues/vue-cinema-northampton (screens as rooms, party packages), product launch /hire/uk/bristol/bristol/product-launch (unusual venues + Longleat nearby) — v1.2
+venue styles: /venue-styles index (inspiration), cinema hub /venue-styles/cinema-private-screening-rooms, cinema venue /venues/vue-cinema-northampton (screens as rooms, party packages) + venue×occasion /venue/vue-cinema-northampton/birthday-party, product launch /hire/uk/bristol/bristol/product-launch (unusual venues + Longleat nearby) — v1.2
 
 TODO (in order): destinations hub (T6b — pending canonical decision) · enquiry flow + thank-you (noindex) · per-template integration specs
 into docs/specs/ (fields consumed, conditionals, ES queries per docs/occasion-config
