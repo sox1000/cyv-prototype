@@ -85,24 +85,38 @@ Give packages structured dates instead:
 | Description / itinerary | free text, as now |
 
 What the site does with them:
-- **Hide automatically** the day after the last date (or Valid until).
-  No manual clean-up.
-- **The page never goes empty.** When the season's packages have expired,
-  the Christmas page stays live and indexed (it keeps its rankings) and
-  shows: "{Venue}'s {next year} Christmas packages are coming soon. Enquire
-  now to be first to hear." with the enquiry form.
-- **Year in the title only while packages are live**, taken from the dates:
-  "Christmas Party at Stirrups Hotel 2026 | Party Nights from £65pp".
-  Without live packages, the title drops the year and the price.
+- **After the last date, the package becomes a guide, not an offer.** It
+  stays on the page, so search engines keep the content and families still
+  get a sense of what the venue does and costs, but it is clearly labelled:
+  > **2026 package, shown as a guide.** 2027 dates and prices are to be
+  > confirmed. Enquire to hear first.
+  - The name, description, itinerary and inclusions stay.
+  - The dates are removed (they are in the past).
+  - The price reads "From £65pp in 2026", never as a current price.
+  - It moves below any live packages and loses its highlight styling.
+- **New packages replace it.** As soon as the venue adds next year's
+  package, last year's guide is hidden.
+- **Stale guides drop off.** If no new package arrives, a guide shows for
+  one more season at most (until the next season's end date, e.g. 31 Dec
+  2027 for a 2026 package), then hides, so the page never shows prices more
+  than a year old. The page itself stays live and indexed, with the
+  "packages coming soon" note and the enquiry form.
+- **Year and price in the title only while packages are live**, taken from
+  the dates: "Christmas Party at Stirrups Hotel 2026 | Party Nights from
+  £65pp". With only a guide, the title drops both: "Christmas Party at
+  Stirrups Hotel | Party Nights & Private Parties".
+- **Schema only for live packages.** A live package is an Offer with
+  `validThrough` set to its last date (shared party nights can also carry
+  Event markup). A guide has no Offer or Event markup, so search results
+  never show an expired price or date.
 - **Dates show as chips**, with past dates greyed out as the season runs,
   and "Sold out" if the venue marks one.
-- **Schema:** each package is an Offer with `validThrough` set to the last
-  date; shared party nights can also carry Event markup with the dates.
-- **Results cards and filters** (Christmas: shared or private party nights,
-  dates available) read the same fields, so expired nights never show.
-- **Venue reminders:** in August, email venues with expired Christmas
-  packages: "Add your {year} Christmas packages", with last year's copied
-  in as a draft to edit. A second nudge in September for those who haven't.
+- **Results cards and filters** use live packages only: "Dates available"
+  and "Party nights from £x" never count a guide. A venue with only a guide
+  still appears in Christmas results, without a price.
+- **Venue reminders:** in August, email venues whose packages are now
+  guides: "Add your {year} Christmas packages", with last year's copied in
+  as a draft to edit. A second nudge in September for those who haven't.
 
 The same fields work for any seasonal package (New Year's Eve, Mother's
 Day, summer parties) and match how venue offers already expire
