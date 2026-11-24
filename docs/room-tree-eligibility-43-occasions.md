@@ -1,3 +1,5 @@
+> **Superseded 24 Nov 2026** by docs/page-rules-cyv-mv.md: /room-hire results are retired and 301 to /hire. Kept for background.
+
 # Room-Tree Eligibility — All 43 Occasions
 ## The `RoomTreeEligible` flag, classified for sign-off
 
