@@ -13,6 +13,7 @@ integration by external developers — every page converts to a Razor view.
 - Conditional sections: render only when data exists (see room page FAQs/pricing pattern)
 - Every new page must be linked from the click journey the same session it's created
 - CYV is UK-first but global: international pages use the same templates and are indexed only above the venue threshold
+- Accessibility: text colours meet WCAG AA (olive text #667200/#5E6900, never the lime #C4D82E as text); links in running text underlined; focus ring = dark outline + lime halo; phone menu is <details> (no JS)
 - Performance: no JS, one font pair, eager+fetchpriority only on LCP images, lazy+dimensions everywhere else
 - Yellow .proto-note boxes explain prototype-only behaviour
 - URLs match the live .NET routes exactly (sox1000/chooseyourvenue, RouteConfigExtensions.cs + controller attributes), no trailing slashes, so launch keeps every indexed URL: /hire/{country}/{county}/{city}/{category}, /venues/{venue}, /venues/{venue}/room-hire/{room}/{id}, /venue/{venue}/{eventType}, /room-hire/{country}/{county}/{city}/{category} (retired: 301s to /hire, see docs/page-rules-cyv-mv.md), /event-types/{category}, /blog, /blog/{category}, /blog/{newsId}/{slug}, /about-us, /contact-us, /advertising, /venue-styles, /venue-offers, /venue-offers/{country}/{county}/{city}, /venue-offers/details/{id}/{seoUrl}. Blog page 2+ proposed as /blog?page={n} (live has load-more only)
