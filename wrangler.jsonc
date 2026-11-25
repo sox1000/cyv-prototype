@@ -8,5 +8,8 @@
     "directory": "./",
     "html_handling": "drop-trailing-slash",
     "not_found_handling": "none"
-  }
+  },
+  // Needed by `npx wrangler preview`, which Workers Builds runs for PR
+  // branches. Empty is fine: assets and settings above are shared.
+  "previews": {}
 }
