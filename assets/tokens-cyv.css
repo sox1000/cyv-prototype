@@ -10,8 +10,8 @@
   --accent-strong:#d3e63f;   /* lime hover */
   --accent-soft:#EEF3C8;     /* lime tint — tags, hover fills */
   --accent-line:#DCE59A;     /* tag borders */
-  --ink-accent:#99A800;      /* olive — typographic accents, links */
-  --ink-accent-deep:#6E7A00; /* olive link/text on light */
+  --ink-accent:#667200;      /* olive — typographic accents (5.1:1 on paper, AA) */
+  --ink-accent-deep:#5E6900; /* olive links/small text (5.7:1 on paper, 5.2:1 on lime tint) */
 
   /* Neutrals */
   --ink:#1E2318;
