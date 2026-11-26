@@ -423,3 +423,20 @@ main:has(> .advertise:last-child) + .site-footer{margin-top:0}
 .route-list a span{display:block;font-weight:400;color:var(--ink-soft);font-size:.9rem}
 .route-list a:hover{border-color:var(--accent);text-decoration:none}
 .search-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow)}
+
+/* ============================================================
+   v1.5: Transport and areas (26 Nov 2026). Tokens only.
+   .transport-list  venue page "Getting there" (T2) and area intro
+   .venue-transport one-line nearest stop on listing cards (T1)
+   .area-row        "By area" / "Nearby areas" chip rows with counts
+   ============================================================ */
+.transport-list{list-style:none;display:grid;gap:10px;margin-top:12px}
+.transport-list li{display:grid;grid-template-columns:48px 1fr;gap:4px 12px;align-items:start;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.transport-list .mode{grid-row:span 2;height:24px;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:.04em;background:var(--accent-soft);border:1px solid var(--accent-line);display:grid;place-items:center;font-size:.72rem;font-weight:700;color:var(--ink)}
+.transport-list strong{color:var(--ink)}
+.transport-list .how{font-size:.88rem;color:var(--ink-soft)}
+.transport-note{font-size:.8rem;color:var(--ink-soft);margin-top:8px}
+.venue-transport{font-size:.85rem;color:var(--ink);margin:-2px 0 10px;display:flex;flex-wrap:wrap;gap:4px 12px}
+.venue-transport span{white-space:nowrap}
+.venue-transport b{font-weight:600}
+.area-row .chip small{color:var(--ink-soft);font-weight:400;margin-left:4px}

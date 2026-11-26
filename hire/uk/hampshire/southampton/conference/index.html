@@ -113,8 +113,17 @@
         <select aria-label="Search radius"><option>All results</option><option>1 mile</option><option>5 miles</option><option>10 miles</option></select>
       </fieldset>
       <fieldset>
-        <legend>Near</legend><!-- near_poi: computed from venue postcode vs station/airport POI table -->
-        <select aria-label="Near a station or airport"><option>Anywhere</option><option>Southampton Central station</option><option>Southampton Airport Parkway</option></select>
+        <legend>Near</legend><!-- near_poi (v1.5): rail stations within the page radius with 1+ venue within 1 mile, busiest first (max 5); airports within 30 miles (corporate occasions only, OccasionConfig.showAirport). Choosing one re-sorts by distance from it. See docs/specs/transport-and-areas.md -->
+        <select aria-label="Near a station or airport">
+          <option>Anywhere</option>
+          <optgroup label="Stations">
+            <option>Southampton Central</option><option>Southampton Airport Parkway</option><option>Hedge End</option>
+          </optgroup>
+          <optgroup label="Airports">
+            <option>Southampton Airport</option><option>Bournemouth Airport</option>
+          </optgroup>
+        </select>
+        <label style="margin-top:8px"><input type="checkbox"> Within a short walk of a station</label><!-- nearest rail/metro ≤ 0.75 mi -->
       </fieldset>
       <fieldset>
         <legend>Delegates</legend><!-- Venue Caters For › Conference › Max Capacity (fallback: largest theatre layout) -->
@@ -166,6 +175,7 @@
           <div class="venue-body">
             <h3><a href="/venues/hilton-bournemouth">Harbour Hotel Southampton</a></h3>
             <p class="venue-loc">5 Maritime Walk, Ocean Village, Southampton SO14 3QT</p>
+            <p class="venue-transport"><span><b>Rail</b> Southampton Central 1.2 mi</span><span><b>Air</b> Southampton Airport 4.1 mi</span></p><!-- {NearestRail} · {NearestAirport} (corporate only) -->
             <p class="venue-desc">Waterside hotel with a marina-view event suite for 350 and four daylight meeting rooms for breakouts.</p>
             <div class="venue-meta"><span class="tag">350 theatre</span><span class="tag">5 rooms</span><span class="tag">DDR from £55pp</span><span class="tag-eco" title="ECOsmart accredited by Greengage">ECOsmart</span></div>
             <div class="venue-actions"><a class="btn btn-solid" href="/venues/hilton-bournemouth">View venue</a><a class="btn btn-ghost" href="#">Add to shortlist</a></div>
@@ -177,6 +187,7 @@
           <div class="venue-body">
             <h3><a href="/venues/hilton-bournemouth">New Place Hotel</a></h3>
             <p class="venue-loc">High Street, Shirrell Heath, Southampton SO32 2JY</p>
+            <p class="venue-transport"><span><b>Rail</b> Botley 2.5 mi</span><span><b>Air</b> Southampton Airport 6.7 mi</span></p>
             <p class="venue-desc">Listed manor in 32 acres with 11 meeting rooms, free parking for 200 cars and bedrooms for residential conferences.</p>
             <div class="venue-meta"><span class="tag">150 theatre</span><span class="tag">11 rooms</span><span class="tag">Free parking</span><span class="tag-eco" title="ECOsmart accredited by Greengage">ECOsmart</span></div>
             <div class="venue-actions"><a class="btn btn-solid" href="/venues/hilton-bournemouth">View venue</a><a class="btn btn-ghost" href="#">Add to shortlist</a></div>
@@ -188,6 +199,7 @@
           <div class="venue-body">
             <h3><a href="/venues/hilton-bournemouth">Utilita Bowl</a></h3>
             <p class="venue-loc">Botley Road, West End, Southampton SO30 3XH</p>
+            <p class="venue-transport"><span><b>Rail</b> Hedge End 1.3 mi</span><span><b>Air</b> Southampton Airport 2.4 mi</span></p>
             <p class="venue-desc">Cricket ground with pitch-view suites, a 1,000-delegate hall and an on-site hotel, five minutes from the M27.</p>
             <div class="venue-meta"><span class="tag">1,000 theatre</span><span class="tag">Exhibition space</span><span class="tag">DDR from £35pp</span></div>
             <div class="venue-actions"><a class="btn btn-solid" href="/venues/hilton-bournemouth">View venue</a><a class="btn btn-ghost" href="#">Add to shortlist</a></div>
@@ -281,6 +293,7 @@
     <h2>Conference venue FAQs</h2>
     <details><summary>How much does a conference venue in Southampton cost?</summary><p class="answer">Day delegate rates at the 31 venues listed start from £35 per person and typically run to £65 at city-centre hotels. Rates usually include room hire, refreshments, lunch and standard AV.</p></details>
     <details><summary>What is the largest conference venue in Southampton?</summary><p class="answer">Utilita Bowl seats up to 1,000 delegates theatre-style, and Southampton Guildhall holds up to 1,500 for larger events.</p></details>
+    <details><summary>Which Southampton conference venues are near a station or the airport?</summary><p class="answer">Harbour Hotel Southampton is 1.2 miles from Southampton Central and 4.1 miles from Southampton Airport. Utilita Bowl is 1.3 miles from Hedge End station and 2.4 miles from the airport. Use "Near" in the filters to sort every venue by distance from a station or airport.</p></details><!-- computed FAQ: top 3 by nearest rail; airport clause on corporate occasions only -->
     <details><summary>Which Southampton conference venues have bedrooms?</summary><p class="answer">Harbour Hotel Southampton, New Place Hotel and Utilita Bowl all have bedrooms on site. Use the "Bedrooms on site" filter to see the full list.</p></details>
   </div>
 </section>
