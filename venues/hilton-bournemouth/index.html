@@ -100,6 +100,32 @@
         </div>
       </section>
 
+      <!-- GETTING THERE (v1.5). All computed from the venue's lat/lng
+           against the POI tables (docs/specs/transport-and-areas.md); the
+           venue enters nothing. Each row renders only when its data exists:
+           rail always within 5 miles; metro only in metro cities; airport
+           only when within 30 miles AND the occasion config has
+           showAirport (corporate occasions, and the venue page itself
+           when the venue hosts any corporate occasion). -->
+      <section class="section" id="getting-there">
+        <h2>Getting <span>there</span></h2>
+        <ul class="transport-list">
+          <li><span class="mode">Rail</span>
+            <strong>Bournemouth station, 1.2 miles</strong><!-- {NearestRail.Name}, {NearestRail.Miles} -->
+            <span class="how">A five-minute taxi ride, or about 25 minutes on foot. Direct trains from London Waterloo, Southampton and Weymouth.</span><!-- walk time shown when ≤ 1 mile; otherwise taxi. Routes line: curated per major station (optional) -->
+          </li>
+          <li><span class="mode">Air</span>
+            <strong>Bournemouth Airport, 4.8 miles</strong><!-- {NearestAirport.Name}, {NearestAirport.Miles} -->
+            <span class="how">About 15 minutes by car. Southampton Airport is 28 miles away.</span><!-- drive estimate: miles × 1.4 at 30 mph, rounded to 5 min; second airport when within 40 miles -->
+          </li>
+          <li><span class="mode">Car</span>
+            <strong>On-site parking with EV charging</strong><!-- from Facilities: Parking / EV charging -->
+            <span class="how">Off the A338 Wessex Way into the town centre.</span><!-- optional venue-entered "Directions" field; hidden when empty -->
+          </li>
+        </ul>
+        <p class="transport-note">Distances are straight-line from the venue. Station and airport locations: NaPTAN, Open Government Licence.</p>
+      </section>
+
       <section class="section">
         <h2>Room hire at <span>Hilton Bournemouth</span></h2>
         <p>All 12 event spaces, from 10-seat boardrooms to the 360-capacity ballroom.</p>
@@ -177,6 +203,7 @@
           <li><span>Bedrooms</span><span>177</span></li>
           <li><span>Day delegate rate</span><span>from £40pp</span></li>
           <li><span>Star rating</span><span>★★★★</span></li>
+          <li><span>Nearest station</span><span><a href="#getting-there">1.2 mi</a></span></li>
         </ul>
         <div class="venue-actions" style="margin-top:16px">
           <a class="btn btn-solid btn-xl" href="#" style="width:100%;text-align:center">Send enquiry</a>

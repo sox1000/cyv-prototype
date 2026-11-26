@@ -43,7 +43,7 @@ Types, Rates & capacities, Bedroom Facilities), seen 24 Nov 2026.
 | Outdoor activities | Outdoor Activities | term |
 | AV equipment | AV Equipment Hire | term |
 | ECOsmart | ECOsmart Venues | term |
-| Near church / crematorium / station / airport | Computed: venue postcode vs POI table (no CMS field) | geo_distance |
+| Near church / crematorium / station / airport | Computed: venue postcode vs POI table (no CMS field); stations and airports: see transport-and-areas.md | geo_distance |
 | Search radius | Computed from page location | geo_distance |
 
 ## Filter sets per occasion (OccasionConfig.filters, in order)

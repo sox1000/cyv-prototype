@@ -29,7 +29,8 @@ static set: /about-us, /contact-us, /advertising (sample copy to confirm) — v1
 CYV vs Meeting Venues split: page rules doc, /room-hire results retired, corporate event types, room FAQs tied to live fields — v1.1 /
 venue styles: /venue-styles index (inspiration), cinema hub /venue-styles/cinema-private-screening-rooms, cinema venue /venues/vue-cinema-northampton (screens as rooms, party packages) + venue×occasion /venue/vue-cinema-northampton/birthday-party, product launch /hire/uk/bristol/bristol/product-launch (unusual venues + Longleat nearby) — v1.2 /
 virtual tours /matterport-venue-virtual-tours (by style, occasion, region), groups index /groups (URL to confirm) + /group/showcase-cinemas; nav matches live menu (adds Virtual Tours, Groups, Christmasvenues.com) — v1.3 /
-destinations hub T6b at /venue-directory (decided 24 Nov 2026: keeps the live URL, replaces Map Search; Venue Search in the menu points here) — v1.4
+destinations hub T6b at /venue-directory (decided 24 Nov 2026: keeps the live URL, replaces Map Search; Venue Search in the menu points here) — v1.4 /
+transport and areas: "Getting there" on venue detail, station/airport Near filter and card line on listings, area variant of T1 at /hire/uk/east-london/shoreditch/conference (nearby areas, other areas of London), "Popular area searches" on /venue-directory — v1.5
 
 TODO (in order): enquiry flow + thank-you (noindex) · per-template integration specs
 into docs/specs/ (fields consumed, conditionals, ES queries per docs/occasion-config
@@ -42,6 +43,7 @@ page-rules-cyv-mv.md — which page type owns which search; CYV ranks venues (in
 specs/room-page-faqs.md — room page FAQ templates, one per field
 specs/filter-field-mapping.md — CMS field behind each filter; filter set per occasion; fields to add
 specs/venue-occasion-copy.md — venue × occasion copy order: venue text, then occasion × style template filled with data, then generic
+specs/transport-and-areas.md — NaPTAN POI table, nearest station/metro/airport rules (airports corporate only), area pages under city subdivisions, phase-2 station/airport pages
 room-tree-eligibility-43-occasions.md — SUPERSEDED by page-rules-cyv-mv.md (/room-hire results retired)
 urgent-seo-fixes + template-architecture — background/audit context
 DynamicSitemap.cs — sitemap implementation for the developer
